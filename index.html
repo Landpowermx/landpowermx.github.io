@@ -44,7 +44,7 @@
       (function() {
         let theme = sessionStorage.getItem('landpower_theme');
         if (!theme) {
-            theme = Math.random() < 0.6 ? 'dark' : 'light';
+            theme = Math.random() < 0.5 ? 'dark' : 'light';
             sessionStorage.setItem('landpower_theme', theme);
         }
         if (theme === 'dark') {
