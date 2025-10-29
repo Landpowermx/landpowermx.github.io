@@ -1,5 +1,5 @@
-/* 1. IMPORTAR FUENTE MONTSERRAT (reemplaza las fuentes anteriores) */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap');
+/* 1. IMPORTAR FUENTE POPPINS (reemplaza Montserrat) */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;800&display=swap');
 
 /* 2. VARIABLES GLOBALES (Tu "marca") - Sin cambios */
 :root { 
@@ -7,19 +7,17 @@
     --brand-blue-hover: #1a5a9c; 
 }
 
-/* 3. ESTILOS BASE Y FUENTES - Modificado para Montserrat */
+/* 3. ESTILOS BASE Y FUENTES - Modificado para Poppins */
 body { 
-    font-family: 'Montserrat', sans-serif; /* <-- FUENTE PRINCIPAL CAMBIADA */
+    font-family: 'Poppins', sans-serif; /* <-- FUENTE PRINCIPAL CAMBIADA */
     overflow-x: hidden; 
 }
 
 /* .font-brand ya no es necesario o puede heredar de body */
-/* Si algún elemento específico necesita un peso diferente, se puede definir aquí o con clases de Tailwind */
+/* Dejamos la regla por si acaso, pero asegurándonos de que use Poppins */
 .font-brand { 
-    /* Esta regla ya no es estrictamente necesaria si todo es Montserrat, 
-       pero la dejamos por si quieres reintroducir una fuente específica para la marca más adelante.
-       Opcionalmente, puedes eliminarla por completo. */
-    font-family: 'Montserrat', sans-serif; 
+    font-family: 'Poppins', sans-serif; 
+    /* Si necesitas pesos específicos para títulos, usa clases de Tailwind como font-bold, font-extrabold */
 }
 
 /* 4. ESTILOS DEL SELECTOR DE IDIOMA - Sin cambios */
@@ -29,7 +27,7 @@ body {
 
 .active-lang { 
     color: var(--brand-blue); 
-    font-weight: 700; 
+    font-weight: 700; /* Puedes ajustar el peso si Poppins se ve diferente */
 }
 
 .inactive-lang { 
@@ -58,7 +56,7 @@ body {
     font-weight: bold; 
     position: absolute; 
     left: 0; 
-    top: 1px; 
+    top: 1px; /* Podrías ajustar ligeramente 'top' si la alineación vertical cambia con Poppins */
     font-size: 1.2em; 
 }
 
