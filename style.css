@@ -1,23 +1,28 @@
-/* 1. IMPORTAR FUENTES (reemplaza los <link> de Google Fonts) */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Plus+Jakarta+Sans:wght@400;700;800&display=swap');
+/* 1. IMPORTAR FUENTE MONTSERRAT (reemplaza las fuentes anteriores) */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap');
 
-/* 2. VARIABLES GLOBALES (Tu "marca") */
+/* 2. VARIABLES GLOBALES (Tu "marca") - Sin cambios */
 :root { 
     --brand-blue: #144579; 
     --brand-blue-hover: #1a5a9c; 
 }
 
-/* 3. ESTILOS BASE Y FUENTES */
+/* 3. ESTILOS BASE Y FUENTES - Modificado para Montserrat */
 body { 
-    font-family: 'Inter', sans-serif; 
+    font-family: 'Montserrat', sans-serif; /* <-- FUENTE PRINCIPAL CAMBIADA */
     overflow-x: hidden; 
 }
 
+/* .font-brand ya no es necesario o puede heredar de body */
+/* Si algún elemento específico necesita un peso diferente, se puede definir aquí o con clases de Tailwind */
 .font-brand { 
-    font-family: 'Plus Jakarta Sans', sans-serif; 
+    /* Esta regla ya no es estrictamente necesaria si todo es Montserrat, 
+       pero la dejamos por si quieres reintroducir una fuente específica para la marca más adelante.
+       Opcionalmente, puedes eliminarla por completo. */
+    font-family: 'Montserrat', sans-serif; 
 }
 
-/* 4. ESTILOS DEL SELECTOR DE IDIOMA (Común en todas las páginas) */
+/* 4. ESTILOS DEL SELECTOR DE IDIOMA - Sin cambios */
 .lang-es { 
     display: none; 
 }
@@ -27,9 +32,6 @@ body {
     font-weight: 700; 
 }
 
-/* Estilos unificados para modo claro y oscuro.
-  (Tomados de tu index.html, que era el más completo) 
-*/
 .inactive-lang { 
     color: #6B7280; 
     cursor: pointer; 
@@ -45,7 +47,7 @@ body {
     color: #E6EDF3; 
 }
 
-/* 5. COMPONENTES PERSONALIZADOS (Listas, enlaces) */
+/* 5. COMPONENTES PERSONALIZADOS - Sin cambios */
 .custom-bullet li { 
     padding-left: 1.75rem; 
     position: relative; 
@@ -69,7 +71,7 @@ body {
     color: var(--brand-blue); 
 }
 
-/* 6. ESTILOS ESPECÍFICOS DE PÁGINAS */
+/* 6. ESTILOS ESPECÍFICOS DE PÁGINAS - Sin cambios */
 
 /* --- Estilos solo para index.html --- */
 .hero-video-container { 
@@ -99,23 +101,17 @@ body {
     background-color: rgba(0,0,0,0.8); 
 }
 
-/* --- Estilos solo para sub-páginas (industrial, data-centers, etc.) --- */
-/* NOTA: En tus HTML, estas clases tienen URLs de imagen específicas.
-  Tailwind no puede manejar eso, así que está bien tener estas 
-  definiciones aquí o en el <style> de cada página. 
-  Pero como son parte del "formato", las pongo aquí.
-*/
+/* --- Estilos para sub-páginas (industrial, data-centers, etc.) --- */
 .page-hero-bg {
     background-size: cover; 
     background-position: center;
 }
-/* Si quieres ser más específico, puedes hacerlo así: */
-body.page-industrial .page-hero-bg {
+.page-industrial .page-hero-bg {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('images/ind-agropage.png');
 }
-body.page-data-centers .page-hero-bg {
+.page-data-centers .page-hero-bg {
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('images/datacenterspage.png');
 }
-body.page-real-estate .page-hero-bg {
+.page-real-estate .page-hero-bg {
      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('images/realpage.png');
 }
