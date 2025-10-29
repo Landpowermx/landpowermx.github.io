@@ -50,16 +50,17 @@
 </head>
 <body class="page-data-centers bg-white text-gray-900 dark:bg-[#050505] dark:text-gray-300 antialiased">
 
-    <header class="bg-black/60 backdrop-blur-lg fixed top-0 left-0 right-0 z-50 border-b border-gray-800/50">
+    <header class="bg-white/80 dark:bg-black/60 backdrop-blur-lg fixed top-0 left-0 right-0 z-50 border-b border-gray-200/80 dark:border-gray-800/50">
         <div class="container mx-auto px-4 sm:px-6 py-4">
             <div class="flex items-center justify-between">
                 <a href="index.html" class="flex items-center space-x-3 flex-shrink-0">
-                    <img src="images/logowhite.png" alt="Landpower Logo" class="h-8">
+                    <img src="images/mainlogo.png" alt="Landpower Logo" class="h-8 dark:hidden">
+                    <img src="images/logowhite.png" alt="Landpower Logo" class="h-8 hidden dark:block">
                 </a>
                 <div class="flex items-center space-x-2 sm:space-x-4">
                     <div class="text-sm font-medium flex space-x-3 items-center">
                         <span id="lang-en-switch" class="active-lang" onclick="setLanguage('en')">EN</span>
-                        <span class="text-gray-600">/</span>
+                        <span class="text-gray-400 dark:text-gray-600">/</span>
                         <span id="lang-es-switch" class="inactive-lang" onclick="setLanguage('es')">ES</span>
                     </div>
                     <a href="index.html#contact" class="hidden sm:inline-block bg-[#144579] text-white font-bold px-5 py-2.5 rounded-lg text-sm hover:bg-[#1a5a9c] transition-colors">
@@ -70,7 +71,6 @@
             </div>
         </div>
     </header>
-
     <main>
         <section class="page-hero-bg min-h-[60vh] flex items-center pt-20">
             <div class="container mx-auto px-6">
