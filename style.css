@@ -1,107 +1,104 @@
-/* 1. IMPORTAR FUENTE POPPINS (reemplaza Montserrat) */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;800&display=swap');
+/* 1. IMPORTAR FUENTES ORIGINALES (Inter y Plus Jakarta Sans) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Plus+Jakarta+Sans:wght@400;700;800&display=swap');
 
 /* 2. VARIABLES GLOBALES (Tu "marca") - Sin cambios */
-:root { 
-    --brand-blue: #144579; 
-    --brand-blue-hover: #1a5a9c; 
+:root {
+    --brand-blue: #144579;
+    --brand-blue-hover: #1a5a9c;
 }
 
-/* 3. ESTILOS BASE Y FUENTES - Modificado para Poppins */
-body { 
-    font-family: 'Poppins', sans-serif; /* <-- FUENTE PRINCIPAL CAMBIADA */
-    overflow-x: hidden; 
+/* 3. ESTILOS BASE Y FUENTES - Restaurado a Inter y Plus Jakarta Sans */
+body {
+    font-family: 'Inter', sans-serif; /* <-- FUENTE PRINCIPAL RESTAURADA */
+    overflow-x: hidden;
 }
 
-/* .font-brand ya no es necesario o puede heredar de body */
-/* Dejamos la regla por si acaso, pero asegurándonos de que use Poppins */
-.font-brand { 
-    font-family: 'Poppins', sans-serif; 
-    /* Si necesitas pesos específicos para títulos, usa clases de Tailwind como font-bold, font-extrabold */
+.font-brand {
+    font-family: 'Plus Jakarta Sans', sans-serif; /* <-- FUENTE DE MARCA RESTAURADA */
 }
 
 /* 4. ESTILOS DEL SELECTOR DE IDIOMA - Sin cambios */
-.lang-es { 
-    display: none; 
+.lang-es {
+    display: none;
 }
 
-.active-lang { 
-    color: var(--brand-blue); 
-    font-weight: 700; /* Puedes ajustar el peso si Poppins se ve diferente */
+.active-lang {
+    color: var(--brand-blue);
+    font-weight: 700;
 }
 
-.inactive-lang { 
-    color: #6B7280; 
-    cursor: pointer; 
-    transition: color 0.2s; 
+.inactive-lang {
+    color: #6B7280;
+    cursor: pointer;
+    transition: color 0.2s;
 }
-.dark .inactive-lang { 
-    color: #9CA3AF; 
+.dark .inactive-lang {
+    color: #9CA3AF;
 }
-.inactive-lang:hover { 
-    color: #1F2937; 
+.inactive-lang:hover {
+    color: #1F2937;
 }
-.dark .inactive-lang:hover { 
-    color: #E6EDF3; 
+.dark .inactive-lang:hover {
+    color: #E6EDF3;
 }
 
 /* 5. COMPONENTES PERSONALIZADOS - Sin cambios */
-.custom-bullet li { 
-    padding-left: 1.75rem; 
-    position: relative; 
+.custom-bullet li {
+    padding-left: 1.75rem;
+    position: relative;
 }
-.custom-bullet li::before { 
-    content: '✓'; 
-    color: var(--brand-blue); 
-    font-weight: bold; 
-    position: absolute; 
-    left: 0; 
-    top: 1px; /* Podrías ajustar ligeramente 'top' si la alineación vertical cambia con Poppins */
-    font-size: 1.2em; 
+.custom-bullet li::before {
+    content: '✓';
+    color: var(--brand-blue);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 1px;
+    font-size: 1.2em;
 }
 
-.hover-link { 
-    transition: all 0.3s ease; 
-    border-bottom: 1px solid transparent; 
+.hover-link {
+    transition: all 0.3s ease;
+    border-bottom: 1px solid transparent;
 }
-.hover-link:hover { 
-    border-bottom: 1px solid var(--brand-blue); 
-    color: var(--brand-blue); 
+.hover-link:hover {
+    border-bottom: 1px solid var(--brand-blue);
+    color: var(--brand-blue);
 }
 
 /* 6. ESTILOS ESPECÍFICOS DE PÁGINAS - Sin cambios */
 
 /* --- Estilos solo para index.html --- */
-.hero-video-container { 
-    position: absolute; top: 0; left: 0; 
-    width: 100%; height: 100%; 
-    overflow: hidden; z-index: 0; 
+.hero-video-container {
+    position: absolute; top: 0; left: 0;
+    width: 100%; height: 100%;
+    overflow: hidden; z-index: 0;
 }
-.hero-video { 
-    position: absolute; top: 50%; left: 50%; 
-    width: 100%; height: 100%; 
-    transform: translate(-50%, -50%); 
-    object-fit: cover; 
+.hero-video {
+    position: absolute; top: 50%; left: 50%;
+    width: 100%; height: 100%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
 }
-#image-gallery { 
-    min-height: 400px; 
+#image-gallery {
+    min-height: 400px;
 }
-#gallery-image { 
-    width: 100%; height: 100%; 
-    object-fit: cover; 
-    position: absolute; top: 0; left: 0; 
-    transition: opacity 0.3s ease-in-out; 
+#gallery-image {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    position: absolute; top: 0; left: 0;
+    transition: opacity 0.3s ease-in-out;
 }
-#gallery-controls button { 
-    transition: background-color 0.2s; 
+#gallery-controls button {
+    transition: background-color 0.2s;
 }
-#gallery-controls button:hover { 
-    background-color: rgba(0,0,0,0.8); 
+#gallery-controls button:hover {
+    background-color: rgba(0,0,0,0.8);
 }
 
 /* --- Estilos para sub-páginas (industrial, data-centers, etc.) --- */
 .page-hero-bg {
-    background-size: cover; 
+    background-size: cover;
     background-position: center;
 }
 .page-industrial .page-hero-bg {
