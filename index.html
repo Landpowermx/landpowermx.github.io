@@ -38,7 +38,7 @@
         tailwind.config = { darkMode: 'class' }
     </script>
     
-    </head>
+</head>
 <body class="antialiased bg-white text-gray-900 dark:bg-[#050505] dark:text-gray-300 transition-colors duration-300">
     <div id="lp-toast" class="fixed top-5 right-5 z-[1000] hidden">
         <div id="lp-toast-card" class="px-4 py-3 rounded-lg shadow-lg bg-green-600 text-white text-sm font-medium">
@@ -65,10 +65,12 @@
                         <span class="text-gray-400 dark:text-gray-600">/</span>
                         <span id="lang-es-switch" class="inactive-lang" onclick="setLanguage('es')">ES</span>
                     </div>
-                    <a href="#contact" class="hidden sm:inline-block bg-brand-blue text-white font-bold px-5 py-2.5 rounded-lg text-sm hover:bg-brand-blue-hover transition-colors">
+                    
+                    <a href="#contact" class="hidden sm:inline-block bg-[#144579] text-white font-bold px-5 py-2.5 rounded-lg text-sm hover:bg-[#1a5a9c] transition-colors">
                         <span class="lang-en">Get Started</span>
                         <span class="lang-es">Comenzar</span>
                     </a>
+                    
                     <div class="md:hidden flex items-center">
                         <button id="menu-btn" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-brand-blue">
                             <span class="sr-only">Open main menu</span>
@@ -113,7 +115,7 @@
                         <span class="lang-en">Grid constraints shouldn’t limit where or how you build. Our autonomous microgrids offer clean, reliable energy with full control—no CapEx, no connection delays, no dependence on aging infrastructure.</span>
                         <span class="lang-es">Las restricciones de la red no deberían limitar dónde o cómo construye. Nuestras microrredes autónomas ofrecen energía limpia y confiable con control total: sin inversión de capital (CapEx), sin demoras de conexión y sin dependencia de infraestructura obsoleta.</span>
                     </p>
-                    <a href="#contact" class="bg-brand-blue text-white font-bold px-8 py-4 rounded-lg text-lg hover:bg-brand-blue-hover transition-colors transform hover:scale-105 inline-block">
+                    <a href="#contact" class="bg-[#144579] text-white font-bold px-8 py-4 rounded-lg text-lg hover:bg-[#1a5a9c] transition-colors transform hover:scale-105 inline-block">
                         <span class="lang-en">Become Grid-Independent</span>
                         <span class="lang-es">Logre su Independencia de la Red</span>
                     </a>
@@ -353,8 +355,9 @@
                             <textarea name="message" id="message" rows="4" required class="block w-full rounded-md border-0 bg-white/80 dark:bg-white/5 py-2.5 px-3.5 text-gray-900 dark:text-white shadow-sm ring-1 ring-inset ring-gray-300 dark:ring-white/10 focus:ring-2 focus:ring-inset focus:ring-brand-blue sm:text-sm transition" placeholder-en="Location, estimated energy needs, project type, etc." placeholder-es="Ubicación, necesidades energéticas, tipo de proyecto, etc."></textarea>
                         </div>
                         <div class="text-center">
+                            
                             <button id="send-btn" type="submit"
-                                class="bg-brand-blue text-white font-bold px-8 py-3 rounded-lg text-base hover:bg-brand-blue-hover transition-all duration-300 w-full sm:w-auto shadow-lg transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-blue dark:ring-offset-gray-900">
+                                class="bg-[#144579] text-white font-bold px-8 py-3 rounded-lg text-base hover:bg-[#1a5a9c] transition-all duration-300 w-full sm:w-auto shadow-lg transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-blue dark:ring-offset-gray-900">
                                 <span class="lang-en">Send</span>
                                 <span class="lang-es">Enviar</span>
                             </button>
@@ -384,7 +387,7 @@
                     </a>
                      <a href="https://www.instagram.com/landpower_mexico/" target="_blank" rel="noopener noreferrer" class="text-gray-600 dark:text-gray-400 hover:text-brand-blue dark:hover:text-white transition-colors">
                         <span class="sr-only">Instagram</span>
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 012.122 2.122c.247.636.416 1.363.465 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-2.122 2.122c-.636.247-1.363.416-2.427.465-1.024.048-1.378.06-3.808.06s-2.784-.013-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-2.122-2.122c-.247-.636-.416-1.363-.465-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.049-1.064.218 1.791.465-2.427a4.902 4.902 0 012.122-2.122c.636-.247 1.363.416 2.427.465C9.53 2.013 9.884 2 12.315 2zM12 0C9.81 0 9.448.01 8.378.058c-1.136.049-1.921.23-2.597.484a6.897 6.897 0 00-2.927 2.927c-.254.676-.435 1.461-.484 2.597C2.01 9.448 2 9.81 2 12s.01 2.552.058 3.622c.049 1.136.23 1.921.484 2.597a6.897 6.897 0 002.927 2.927c.676.254 1.461.435 2.597.484C9.448 21.99 9.81 22 12 22s2.552-.01 3.622-.058c1.136-.049 1.921.23 2.597-.484a6.897 6.897 0 002.927-2.927c.254-.676.435-1.461-.484-2.597C21.99 14.552 22 14.19 22 12s-.01-2.552-.058-3.622c-.049-1.136-.23-1.921-.484-2.597a6.897 6.897 0 00-2.927-2.927c-.676-.254-1.461-.435-2.597-.484C14.552 2.01 14.19 2 12 2h.013zM12 6.845a5.155 5.155 0 100 10.31 5.155 5.155 0 000-10.31zm0 8.415a3.26 3.26 0 110-6.52 3.26 3.26 0 010 6.52zm5.835-8.24a1.2 1.2 0 100-2.4 1.2 1.2 0 000 2.4z" clip-rule="evenodd"></path></svg>
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 012.122 2.122c.247.636.416 1.363.465 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-2.122 2.122c-.636.247-1.363.416-2.427.465-1.024.048-1.378.06-3.808.06s-2.784-.013-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-2.122-2.122c-.247-.636-.416-1.363-.465-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.049-1.064.218 1.791.465-2.427a4.902 4.902 0 012.122-2.122c.636-.247 1.363.416 2.427.465C9.53 2.013 9.884 2 12.315 2zM12 0C9.81 0 9.448.01 8:37:8.058c-1.136.049-1.921.23-2.597.484a6.897 6.897 0 00-2.927 2.927c-.254.676-.435 1.461-.484 2.597C2.01 9.448 2 9.81 2 12s.01 2.552.058 3.622c.049 1.136.23 1.921.484 2.597a6.897 6.897 0 002.927 2.927c.676.254 1.461.435 2.597.484C9.448 21.99 9.81 22 12 22s2.552-.01 3.622-.058c1.136-.049 1.921.23 2.597-.484a6.897 6.897 0 002.927-2.927c.254-.676.435-1.461-.484-2.597C21.99 14.552 22 14.19 22 12s-.01-2.552-.058-3.622c-.049-1.136-.23-1.921-.484-2.597a6.897 6.897 0 00-2.927-2.927c-.676-.254-1.461-.435-2.597-.484C14.552 2.01 14.19 2 12 2h.013zM12 6.845a5.155 5.155 0 100 10.31 5.155 5.155 0 000-10.31zm0 8.415a3.26 3.26 0 110-6.52 3.26 3.26 0 010 6.52zm5.835-8.24a1.2 1.2 0 100-2.4 1.2 1.2 0 000 2.4z" clip-rule="evenodd"></path></svg>
                     </a>
                 </div>
             </div>
@@ -395,5 +398,6 @@
     </footer>
     
     <script src="app.js" defer></script>
-    </body>
+
+</body>
 </html>
