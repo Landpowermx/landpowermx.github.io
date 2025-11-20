@@ -21,16 +21,14 @@
     <script>
       (function() {
         var root = document.documentElement;
-        var KEY = 'landpower_theme'; // Clave unificada
+        var KEY = 'landpower_theme'; 
         var theme = sessionStorage.getItem(KEY);
         
         if (!theme) {
-            // Lógica unificada (de index.html)
             theme = Math.random() < 0.6 ? 'dark' : 'light';
             sessionStorage.setItem(KEY, theme);
         }
         
-        // Lógica corregida (con 'else remove')
         if (theme === 'dark') {
             root.classList.add('dark');
         } else {
@@ -108,11 +106,11 @@
     <main>
         <section class="min-h-screen relative flex items-center justify-center pt-20 overflow-hidden bg-black">
             <div class="hero-video-container">
-                <video autoplay loop muted playsinline class="hero-video" id="hero-video-player">
+                <video autoplay loop muted playsinline class="hero-video object-cover object-top" id="hero-video-player">
                     <source src="images/video1.mp4" type="video/mp4">
                 </video>
             </div>
-            <div class="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/60 z-10"></div>
+            <div class="absolute inset-0 bg-black/60 z-10"></div>
             
             <div class="container mx-auto px-6 text-center relative z-20">
                 <div class="max-w-4xl mx-auto">
@@ -310,7 +308,7 @@
                         </h2>
                         <p class="text-gray-700 dark:text-gray-400 mb-6">
                             <span class="lang-en">Landpower is a venture born from the deep sector expertise of its founding partners, <a href="https://www.becquerelcapital.com" target="_blank" class="text-brand-blue hover-link">Becquerel Capital</a> and GG Infraestructura Sustentable. Our team comprises engineers, financiers, and operators who have dedicated their careers to developing Mexico's energy landscape.</span>
-                            <span class="lang-es">Landpower es una empresa que nace de la profunda experiencia en el sector de sus socios fundadores, <a href="https://www.becquerelcapital.com" target="_blank" class="text-brand-blue hover-link">Becquerel Capital</a> and GG Infraestructura Sustentable. Nuestro equipo está formado por ingenieros, financieros y operadores que han dedicado sus carreras al desarrollo del panorama energético de México.</span>
+                            <span class="lang-es">Landpower es una empresa que nace de la profunda experiencia en el sector de sus socios fundadores, <a href="https://www.becquerelcapital.com" target="_blank" class="text-brand-blue hover-link">Becquerel Capital</a> y GG Infraestructura Sustentable. Nuestro equipo está formado por ingenieros, financieros y operadores que han dedicado sus carreras al desarrollo del panorama energético de México.</span>
                         </p>
                         <p class="text-gray-700 dark:text-gray-400">
                             <span class="lang-en">This foundation in today's energy infrastructure gives us the unique insight and capability to build the autonomous energy solutions of tomorrow.</span>
@@ -420,7 +418,7 @@
         document.addEventListener("DOMContentLoaded", function() {
             var video = document.getElementById("hero-video-player");
             if (video) {
-                video.playbackRate = 0.75;
+                video.playbackRate = 0.70;
             }
         });
     </script>
