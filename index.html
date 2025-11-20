@@ -112,18 +112,19 @@
                     <source src="images/video1.mp4" type="video/mp4">
                 </video>
             </div>
-            <div class="absolute inset-0 bg-black/60 z-10"></div>
+            <div class="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/60 z-10"></div>
+            
             <div class="container mx-auto px-6 text-center relative z-20">
                 <div class="max-w-4xl mx-auto">
-                    <h1 class="font-brand text-4xl md:text-6xl lg:text-7xl font-semibold text-white leading-tight mb-6 drop-shadow-lg">
+                    <h1 class="font-brand text-4xl md:text-6xl lg:text-7xl font-semibold text-white leading-tight mb-6 drop-shadow-[0_5px_5px_rgba(0,0,0,0.9)]">
                         <span class="lang-en">The end of energy constraints</span>
                         <span class="lang-es">El fin de las limitaciones energéticas</span>
                     </h1>
-                    <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-10">
+                    <p class="text-lg md:text-xl text-gray-100 font-medium max-w-3xl mx-auto mb-10 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
                         <span class="lang-en">Grid constraints shouldn’t limit where or how you build. Our autonomous microgrids offer clean, reliable energy with full control—no CapEx, no connection delays, no dependence on aging infrastructure.</span>
                         <span class="lang-es">Las restricciones de la red no deberían limitar dónde o cómo construye. Nuestras microrredes autónomas ofrecen energía limpia y confiable con control total: sin inversión de capital (CapEx), sin demoras de conexión y sin dependencia de infraestructura obsoleta.</span>
                     </p>
-                    <a href="#contact" class="bg-[#144579] text-white font-bold px-8 py-4 rounded-lg text-lg hover:bg-[#1a5a9c] transition-colors transform hover:scale-105 inline-block">
+                    <a href="#contact" class="bg-[#144579] text-white font-bold px-8 py-4 rounded-lg text-lg hover:bg-[#1a5a9c] transition-colors transform hover:scale-105 inline-block shadow-xl">
                         <span class="lang-en">Become grid-independent</span>
                         <span class="lang-es">Logre su independencia de la red</span>
                     </a>
@@ -309,7 +310,7 @@
                         </h2>
                         <p class="text-gray-700 dark:text-gray-400 mb-6">
                             <span class="lang-en">Landpower is a venture born from the deep sector expertise of its founding partners, <a href="https://www.becquerelcapital.com" target="_blank" class="text-brand-blue hover-link">Becquerel Capital</a> and GG Infraestructura Sustentable. Our team comprises engineers, financiers, and operators who have dedicated their careers to developing Mexico's energy landscape.</span>
-                            <span class="lang-es">Landpower es una empresa que nace de la profunda experiencia en el sector de sus socios fundadores, <a href="https://www.becquerelcapital.com" target="_blank" class="text-brand-blue hover-link">Becquerel Capital</a> y GG Infraestructura Sustentable. Nuestro equipo está formado por ingenieros, financieros y operadores que han dedicado sus carreras al desarrollo del panorama energético de México.</span>
+                            <span class="lang-es">Landpower es una empresa que nace de la profunda experiencia en el sector de sus socios fundadores, <a href="https://www.becquerelcapital.com" target="_blank" class="text-brand-blue hover-link">Becquerel Capital</a> and GG Infraestructura Sustentable. Nuestro equipo está formado por ingenieros, financieros y operadores que han dedicado sus carreras al desarrollo del panorama energético de México.</span>
                         </p>
                         <p class="text-gray-700 dark:text-gray-400">
                             <span class="lang-en">This foundation in today's energy infrastructure gives us the unique insight and capability to build the autonomous energy solutions of tomorrow.</span>
@@ -414,5 +415,14 @@
     <script src="app.js" defer></script>
 
     <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/49418521.js"></script>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var video = document.getElementById("hero-video-player");
+            if (video) {
+                video.playbackRate = 0.75;
+            }
+        });
+    </script>
     </body>
 </html>
