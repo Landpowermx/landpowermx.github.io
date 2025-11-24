@@ -8,7 +8,7 @@
         var theme = sessionStorage.getItem(KEY);
 
         if (!theme) {
-            theme = Math.random() < 0.6 ? 'dark' : 'light';
+            theme = Math.random() < 0.5 ? 'dark' : 'light';
             sessionStorage.setItem(KEY, theme);
         }
 
