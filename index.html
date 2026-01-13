@@ -308,7 +308,7 @@
                         </h2>
                         <p class="text-gray-700 dark:text-gray-400 mb-6">
                             <span class="lang-en">Landpower is a venture born from the deep sector expertise of its founding partners, <a href="https://www.becquerelcapital.com" target="_blank" class="text-brand-blue hover-link">Becquerel Capital</a> and GG Infraestructura Sustentable. Our team comprises engineers, financiers, and operators who have dedicated their careers to developing Mexico's energy landscape.</span>
-                            <span class="lang-es">Landpower es una empresa que nace de la profunda experiencia en el sector de sus socios fundadores, <a href="https://www.becquerelcapital.com" target="_blank" class="text-brand-blue hover-link">Becquerel Capital</a> y GG Infraestructura Sustentable. Nuestro equipo está formado por ingenieros, financieros y operadores que han dedicado sus carreras al desarrollo del panorama energético de México.</span>
+                            <span class="lang-es">Landpower es una empresa que nace de la profunda experiencia en el sector de sus socios fundadores, <a href="https://www.becquerelcapital.com" target="_blank" class="text-brand-blue hover-link">Becquerel Capital</a> and GG Infraestructura Sustentable. Nuestro equipo está formado por ingenieros, financieros y operadores que han dedicado sus carreras al desarrollo del panorama energético de México.</span>
                         </p>
                         <p class="text-gray-700 dark:text-gray-400">
                             <span class="lang-en">This foundation in today's energy infrastructure gives us the unique insight and capability to build the autonomous energy solutions of tomorrow.</span>
@@ -348,9 +348,8 @@
                             <span class="lang-es">¿Su proyecto está limitado por la red? Cuéntenos sus objetivos. Nuestros expertos diseñarán una solución a la medida y financieramente atractiva para potenciar su ambición.</span>
                         </p>
                     </div>
+                    
                     <form id="contact-form" action="https://formspree.io/f/mwprywgj"  method="POST" class="max-w-xl mx-auto">
-                        <input type="hidden" name="_next" value="https://landpower.mx/thanks.html">
-                        
                         <div class="grid sm:grid-cols-2 gap-6 mb-6">
                             <div>
                                 <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"><span class="lang-en">Full Name</span><span class="lang-es">Nombre completo</span></label>
@@ -377,6 +376,7 @@
                                 <span class="lang-es">Enviar</span>
                             </button>
                         </div>
+                        <p id="form-status" class="text-center mt-4 text-red-500 hidden"></p>
                     </form>
                 </div>
             </div>
@@ -413,7 +413,6 @@
     </footer>
     
     <script src="app.js" defer></script>
-
     <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/49418521.js"></script>
     
     <script>
@@ -423,6 +422,52 @@
                 video.playbackRate = 0.70;
             }
         });
+    </script>
+    
+    <script>
+        var form = document.getElementById("contact-form");
+        
+        async function handleSubmit(event) {
+          event.preventDefault(); // Evita la redirección automática de Formspree
+          var status = document.getElementById("form-status");
+          var data = new FormData(event.target);
+          
+          var btn = document.getElementById("send-btn");
+          var originalContent = btn.innerHTML;
+          btn.innerHTML = "Sending... / Enviando...";
+          btn.disabled = true;
+
+          fetch(event.target.action, {
+            method: form.method,
+            body: data,
+            headers: {
+                'Accept': 'application/json' // Pide respuesta JSON en lugar de redirección
+            }
+          }).then(response => {
+            if (response.ok) {
+              // AQUÍ OCURRE LA MAGIA: Redirección manual a thanks.html
+              window.location.href = "thanks.html"; 
+            } else {
+              response.json().then(data => {
+                if (Object.hasOwn(data, 'errors')) {
+                  status.innerHTML = data["errors"].map(error => error["message"]).join(", ");
+                } else {
+                  status.innerHTML = "Oops! There was a problem submitting your form / Hubo un problema al enviar.";
+                }
+                status.classList.remove("hidden");
+                btn.innerHTML = originalContent;
+                btn.disabled = false;
+              })
+            }
+          }).catch(error => {
+            status.innerHTML = "Oops! There was a problem submitting your form / Hubo un problema al enviar.";
+            status.classList.remove("hidden");
+            btn.innerHTML = originalContent;
+            btn.disabled = false;
+          });
+        }
+        
+        form.addEventListener("submit", handleSubmit);
     </script>
     </body>
 </html>
