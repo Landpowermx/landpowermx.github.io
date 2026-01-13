@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You | Landpower</title>
+    <meta name="robots" content="noindex"> 
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    
+    <script>
+      (function() {
+        var root = document.documentElement;
+        var KEY = 'landpower_theme'; 
+        var theme = sessionStorage.getItem(KEY);
+        
+        if (!theme) {
+            theme = Math.random() < 0.5 ? 'dark' : 'light';
+            sessionStorage.setItem(KEY, theme);
+        }
+        
+        if (theme === 'dark') {
+            root.classList.add('dark');
+        } else {
+            root.classList.remove('dark');
+        }
+      })();
+    </script>
+    
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { darkMode: 'class' }
+    </script>
+    
+</head>
+<body class="antialiased bg-white text-gray-900 dark:bg-[#050505] dark:text-gray-300 transition-colors duration-300 flex flex-col min-h-screen">
+
+    <header class="bg-white/80 dark:bg-black/60 backdrop-blur-lg fixed top-0 left-0 right-0 z-50 border-b border-gray-200/80 dark:border-gray-800/50">
+        <div class="container mx-auto px-4 sm:px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="flex items-center space-x-3 flex-shrink-0">
+                    <img src="images/mainlogo.png" alt="Landpower Logo" class="h-8 dark:hidden">
+                    <img src="images/logowhite.png" alt="Landpower Logo" class="h-8 hidden dark:block">
+                </a>
+                
+                <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-600 dark:text-gray-300">
+                    <a href="index.html" class="hover:text-brand-blue transition-colors">
+                        <span class="lang-en">Return Home</span><span class="lang-es">Volver al Inicio</span>
+                    </a>
+                </nav>
+
+                <div class="flex items-center space-x-2 sm:space-x-4">
+                    <div class="text-sm font-medium flex space-x-3 items-center">
+                        <span id="lang-en-switch" class="active-lang" onclick="setLanguage('en')">EN</span>
+                        <span class="text-gray-400 dark:text-gray-600">/</span>
+                        <span id="lang-es-switch" class="inactive-lang" onclick="setLanguage('es')">ES</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow flex items-center justify-center pt-24 pb-12">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto text-center">
+                
+                <div class="mb-10 animate-fade-in-up">
+                    <h1 class="font-brand text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+                        <span class="lang-en">Message Received</span>
+                        <span class="lang-es">Mensaje Recibido</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+                        <span class="lang-en">Thank you for reaching out. Our team allows you to become grid-independent. We will analyze your project needs and get back to you shortly.</span>
+                        <span class="lang-es">Gracias por contactarnos. Nuestro equipo le permitirá lograr su independencia de la red. Analizaremos las necesidades de su proyecto y nos pondremos en contacto brevemente.</span>
+                    </p>
+                </div>
+
+                <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-gray-200 dark:border-gray-800 bg-black aspect-video max-w-3xl mx-auto mb-10 group">
+                    <video autoplay loop muted playsinline controls class="w-full h-full object-cover">
+                        <source src="images/video2.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+
+                <div>
+                    <a href="index.html" class="inline-block bg-[#144579] text-white font-bold px-8 py-4 rounded-lg text-lg hover:bg-[#1a5a9c] transition-colors transform hover:scale-105 shadow-xl">
+                        <span class="lang-en">Back to Homepage</span>
+                        <span class="lang-es">Volver al Inicio</span>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-50 dark:bg-black border-t border-gray-200 dark:border-gray-800/50">
+        <div class="container mx-auto px-6 py-8 text-center">
+             <a href="index.html" class="inline-block mb-4">
+                <img src="images/mainlogo.png" alt="Landpower Logo" class="h-6 dark:hidden opacity-70 grayscale hover:grayscale-0 transition-all">
+                <img src="images/logowhite.png" alt="Landpower Logo" class="h-6 hidden dark:block opacity-70 grayscale hover:grayscale-0 transition-all">
+            </a>
+            <p class="text-sm text-gray-500 dark:text-gray-500">
+                &copy; 2025 Landpower.
+            </p>
+        </div>
+    </footer>
+    
+    <script src="app.js" defer></script>
+    
+</body>
+</html>
