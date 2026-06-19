@@ -1,484 +1,881 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Landpower | El fin de las limitaciones energéticas</title>
+<meta name="description" content="Landpower diseña, estructura y opera sistemas autónomos de energía, agua, movilidad y servicios críticos para desarrollos turísticos, residenciales y hospitality de alto valor." />
+<link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://landpower.mx/" />
+<meta property="og:title" content="Landpower | El fin de las limitaciones energéticas" />
+<meta property="og:description" content="Infraestructura autónoma integrada para desarrollos de alto valor. Energía, agua, movilidad y servicios críticos bajo una plataforma de largo plazo." />
+<meta property="og:image" content="https://landpower.mx/images/experience1.png" />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:title" content="Landpower | El fin de las limitaciones energéticas" />
+<meta property="twitter:description" content="Infraestructura autónoma integrada para desarrollos de alto valor." />
+<meta property="twitter:image" content="https://landpower.mx/images/experience1.png" />
+
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17907435273"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'AW-17907435273');
 </script>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landpower | Autonomous Energy Infrastructure</title>
-    <meta name="description" content="Landpower delivers autonomous energy infrastructure as a service. Get cheaper, cleaner, more reliable power for demanding projects with zero CapEx. Become grid-independent.">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://landpower.mx/">
-    <meta property="og:title" content="Landpower | Autonomous Energy Infrastructure">
-    <meta property="og:description" content="Landpower delivers autonomous energy infrastructure as a service — reliable, clean power where you need it.">
-    <meta property="og:image" content="https://landpower.mx/images/experience1.png">
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://landpower.mx/">
-    <meta property="twitter:title" content="Landpower | Autonomous Energy Infrastructure">
-    <meta property="twitter:description" content="Landpower delivers autonomous energy infrastructure as a service — reliable, clean power where you need it.">
-    <meta property="twitter:image" content="https://landpower.mx/images/experience1.png">
-    
-    <script>
-      (function() {
-        var root = document.documentElement;
-        var KEY = 'landpower_theme'; 
-        var theme = sessionStorage.getItem(KEY);
-        
-        if (!theme) {
-            theme = Math.random() < 0.5 ? 'dark' : 'light';
-            sessionStorage.setItem(KEY, theme);
-        }
-        
-        if (theme === 'dark') {
-            root.classList.add('dark');
-        } else {
-            root.classList.remove('dark');
-        }
-      })();
-    </script>
-    
-    <link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
 
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = { darkMode: 'class' }
-    </script>
-    
+<style>
+  :root {
+    --navy:        #15447A;
+    --blue-active: #1E5FA8;
+    --blue-mid:    #4A84B8;
+    --blue-light:  #D8E8F4;
+    --sand:        #F7F5F0;
+    --sand-soft:   #EDE9E2;
+    --slate:       #3A5068;
+    --white:       #FFFFFF;
+
+    --ink:        #1c2430;
+    --body:       #51606f;
+    --muted:      #8a96a3;
+    --rule:       rgba(21, 68, 122, 0.12);
+    --rule-light: rgba(255, 255, 255, 0.16);
+
+    --font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+    --max: 1240px;
+    --gutter: clamp(1.25rem, 4vw, 3.5rem);
+    --ease: cubic-bezier(.22, .61, .36, 1);
+    --radius: 14px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--font);
+    background: var(--sand);
+    color: var(--body);
+    font-size: 16px;
+    line-height: 1.7;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+  img, video { display: block; max-width: 100%; }
+  a { color: inherit; text-decoration: none; }
+  ::selection { background: var(--blue-light); color: var(--navy); }
+
+  h1, h2, h3, h4 { color: var(--ink); font-weight: 700; letter-spacing: -0.01em; line-height: 1.15; }
+  strong { font-weight: 600; color: var(--ink); }
+
+  .wrap { max-width: var(--max); margin: 0 auto; padding-left: var(--gutter); padding-right: var(--gutter); }
+
+  .eyebrow {
+    font-size: 0.66rem;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--blue-active);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .eyebrow::before { content:""; width: 26px; height: 1px; background: var(--blue-mid); }
+  .eyebrow.center { justify-content: center; }
+
+  /* ============ NAV ============ */
+  header.nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(255,255,255,0.9);
+    backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid transparent;
+    transition: border-color .4s var(--ease), box-shadow .4s var(--ease);
+  }
+  header.nav.scrolled { border-bottom-color: var(--rule); box-shadow: 0 4px 24px rgba(21,68,122,0.05); }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 1rem var(--gutter); max-width: var(--max); margin: 0 auto; }
+  .nav-logo img { height: 30px; }
+  .nav-links { display: flex; gap: 2rem; font-size: 0.82rem; font-weight: 500; color: var(--body); }
+  .nav-links a { position: relative; transition: color .3s; cursor: pointer; }
+  .nav-links a::after { content:""; position:absolute; left:0; bottom:-5px; width:0; height:1.5px; background: var(--navy); transition: width .35s var(--ease); }
+  .nav-links a:hover { color: var(--navy); }
+  .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+  .nav-links a.active { color: var(--navy); }
+  .nav-right { display: flex; align-items: center; gap: 1.1rem; }
+  .lang { display: flex; gap: 0.4rem; align-items: center; font-size: 0.74rem; font-weight: 600; letter-spacing: 0.08em; }
+  .lang span { color: var(--muted); cursor: pointer; transition: color .25s; }
+  .lang span.active { color: var(--navy); }
+  .lang .bar { width: 1px; height: 11px; background: var(--rule); }
+  .btn {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: var(--navy); color: var(--white);
+    font-weight: 600; font-size: 0.85rem;
+    padding: 0.7rem 1.3rem; border-radius: 10px;
+    transition: background .3s var(--ease), transform .3s var(--ease);
+    cursor: pointer; border: none;
+  }
+  .btn:hover { background: var(--blue-active); transform: translateY(-1px); }
+  .btn .arrow { transition: transform .3s var(--ease); }
+  .btn:hover .arrow { transform: translateX(3px); }
+  .btn.ghost { background: transparent; color: var(--navy); padding: 0.7rem 0; }
+  .btn.ghost:hover { background: transparent; color: var(--blue-active); transform: none; }
+  .btn.ghost:hover .arrow { transform: translateX(4px); }
+  .btn.on-navy { background: var(--white); color: var(--navy); }
+  .btn.on-navy:hover { background: var(--blue-light); }
+  .nav-btn { display: inline-flex; }
+  .menu-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.4rem; color: var(--navy); }
+  .menu-toggle svg { width: 26px; height: 26px; }
+  .mobile-menu { display: none; flex-direction: column; padding: 0.5rem var(--gutter) 1.5rem; border-top: 1px solid var(--rule); background: rgba(255,255,255,0.98); }
+  .mobile-menu a { padding: 0.7rem 0; font-weight: 500; color: var(--body); border-bottom: 1px solid var(--rule); }
+  .mobile-menu .btn { margin-top: 1rem; justify-content: center; }
+
+  @media (max-width: 920px) {
+    .nav-links { display: none; }
+    .nav-btn { display: none; }
+    .menu-toggle { display: inline-flex; }
+    .mobile-menu.open { display: flex; }
+  }
+
+  /* ============ HERO ============ */
+  .hero { position: relative; min-height: 100vh; display: flex; align-items: center; overflow: hidden; background: var(--navy); }
+  .hero-video-wrap { position: absolute; inset: 0; z-index: 0; }
+  .hero-video-wrap video { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+  .hero-video-wrap::after {
+    content:""; position:absolute; inset:0;
+    background: linear-gradient(90deg, rgba(11,32,58,0.92) 0%, rgba(13,40,72,0.72) 45%, rgba(13,40,72,0.4) 100%);
+  }
+  .hero-inner { position: relative; z-index: 2; max-width: var(--max); margin: 0 auto; padding: 7rem var(--gutter) 4rem; width: 100%; }
+  .hero-content { max-width: 760px; }
+  .hero .eyebrow { color: var(--blue-light); margin-bottom: 1.6rem; }
+  .hero .eyebrow::before { background: var(--blue-mid); }
+  .hero h1 {
+    color: var(--white); font-weight: 800;
+    font-size: clamp(2.6rem, 6vw, 4.7rem);
+    letter-spacing: -0.025em; line-height: 1.04;
+    margin-bottom: 1.6rem;
+  }
+  .hero p.sub {
+    color: rgba(255,255,255,0.86);
+    font-size: clamp(1.02rem, 1.6vw, 1.22rem);
+    font-weight: 400; line-height: 1.6;
+    max-width: 600px; margin-bottom: 2.4rem;
+  }
+  .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; align-items: center; }
+  .hero .btn { padding: 0.95rem 1.7rem; font-size: 0.95rem; }
+  .hero-scroll { position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%); z-index: 2; color: rgba(255,255,255,0.5); font-size: 0.62rem; letter-spacing: 0.3em; text-transform: uppercase; display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
+  .hero-scroll .line { width: 1px; height: 34px; background: linear-gradient(rgba(255,255,255,0.5), transparent); animation: scrollpulse 2.4s var(--ease) infinite; }
+  @keyframes scrollpulse { 0%,100%{opacity:.3; transform: scaleY(.7);} 50%{opacity:1; transform: scaleY(1);} }
+
+  /* ============ SECTION SCAFFOLD ============ */
+  section.band { padding: clamp(4.5rem, 9vh, 8rem) 0; }
+  section.sand { background: var(--sand); }
+  section.white { background: var(--white); }
+  section.soft { background: var(--sand-soft); }
+  .section-head { max-width: 720px; margin: 0 auto clamp(3rem, 6vh, 4.5rem); text-align: center; }
+  .section-head.left { margin-left: 0; text-align: left; }
+  .section-head .eyebrow { margin-bottom: 1.2rem; }
+  .section-head h2 { font-size: clamp(1.9rem, 3.6vw, 2.9rem); margin-bottom: 1.1rem; }
+  .section-head p { font-size: clamp(1rem, 1.4vw, 1.12rem); color: var(--body); }
+  .lead-accent { color: var(--navy); }
+
+  /* ============ TESIS ============ */
+  .thesis-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 4.5rem); align-items: center; }
+  .thesis-copy h2 { font-size: clamp(1.9rem, 3.4vw, 2.7rem); margin-bottom: 1.4rem; }
+  .thesis-copy p { margin-bottom: 1.2rem; max-width: 52ch; }
+  .forces { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: var(--radius); overflow: hidden; }
+  .force { background: var(--white); padding: 1.8rem 1.6rem; transition: background .3s var(--ease); }
+  .force:hover { background: var(--sand); }
+  .force .fnum { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; color: var(--blue-mid); display: block; margin-bottom: 0.6rem; }
+  .force h4 { font-size: 1.12rem; margin-bottom: 0.5rem; color: var(--navy); }
+  .force p { font-size: 0.9rem; line-height: 1.6; color: var(--body); }
+  @media (max-width: 860px) { .thesis-grid { grid-template-columns: 1fr; } .forces { grid-template-columns: 1fr; } }
+
+  /* ============ METRICS ============ */
+  .metrics { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 1rem; }
+  .metric { background: var(--sand); border: 1px solid var(--rule); border-radius: var(--radius); padding: 2.4rem 1.8rem; text-align: center; transition: transform .3s var(--ease), box-shadow .3s var(--ease); }
+  .metric:hover { transform: translateY(-4px); box-shadow: 0 14px 36px rgba(21,68,122,0.08); }
+  .metric .big { font-size: clamp(2.6rem, 5vw, 3.6rem); font-weight: 800; color: var(--navy); letter-spacing: -0.03em; line-height: 1; margin-bottom: 0.7rem; }
+  .metric .mlabel { font-size: 0.66rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.9rem; }
+  .metric p { font-size: 0.9rem; line-height: 1.55; }
+  @media (max-width: 760px) { .metrics { grid-template-columns: 1fr; } }
+
+  /* ============ PLATFORM ============ */
+  .platform-top { display: grid; grid-template-columns: 1.1fr 1fr; gap: clamp(2.5rem, 6vw, 5rem); align-items: center; margin-bottom: clamp(3rem, 6vh, 5rem); }
+  .platform-top h2 { font-size: clamp(1.9rem, 3.4vw, 2.7rem); margin-bottom: 1.3rem; }
+  .platform-top p { margin-bottom: 1.1rem; max-width: 50ch; }
+  .core-diagram { width: 100%; max-width: 460px; margin: 0 auto; }
+  .verticals { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; }
+  .vcard { background: var(--white); border: 1px solid var(--rule); border-radius: var(--radius); padding: 1.8rem 1.6rem; transition: transform .3s var(--ease), box-shadow .3s var(--ease), border-color .3s; }
+  .vcard:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(21,68,122,0.09); border-color: var(--blue-light); }
+  .vcard .vicon { width: 40px; height: 40px; border-radius: 9px; background: var(--blue-light); color: var(--navy); display: flex; align-items: center; justify-content: center; margin-bottom: 1.1rem; }
+  .vcard .vicon svg { width: 21px; height: 21px; }
+  .vcard h4 { font-size: 1.08rem; margin-bottom: 0.5rem; color: var(--navy); }
+  .vcard p { font-size: 0.9rem; line-height: 1.6; }
+  .vcard .core-tag { display: inline-block; margin-top: 0.9rem; font-size: 0.6rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--blue-active); background: var(--blue-light); padding: 0.25rem 0.6rem; border-radius: 20px; }
+  @media (max-width: 900px) { .platform-top { grid-template-columns: 1fr; } .verticals { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 600px) { .verticals { grid-template-columns: 1fr; } }
+
+  /* ============ MODELO / PHASES ============ */
+  .phases { display: grid; grid-template-columns: 1fr 1fr; gap: 1.6rem; }
+  .phase { background: var(--white); border: 1px solid var(--rule); border-radius: var(--radius); padding: 2.4rem; }
+  .phase.dark { background: var(--slate); border-color: var(--slate); }
+  .phase.dark h3, .phase.dark .ph-label { color: var(--white); }
+  .phase.dark li { color: rgba(255,255,255,0.85); }
+  .phase.dark li::before { background: var(--blue-mid); }
+  .phase.dark .ph-note { color: rgba(255,255,255,0.7); border-top-color: var(--rule-light); }
+  .ph-label { font-size: 0.66rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--blue-active); margin-bottom: 0.9rem; }
+  .phase h3 { font-size: 1.4rem; margin-bottom: 1.4rem; color: var(--navy); }
+  .phase ul { list-style: none; }
+  .phase li { position: relative; padding-left: 1.4rem; margin-bottom: 0.7rem; font-size: 0.94rem; line-height: 1.55; color: var(--body); }
+  .phase li::before { content:""; position:absolute; left:0; top:0.62em; width:6px; height:6px; border-radius:50%; background: var(--blue-active); }
+  .ph-note { margin-top: 1.5rem; padding-top: 1.3rem; border-top: 1px solid var(--rule); font-size: 0.88rem; line-height: 1.6; color: var(--slate); }
+  @media (max-width: 800px) { .phases { grid-template-columns: 1fr; } }
+
+  /* ============ PROYECTOS ============ */
+  .projects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.8rem; }
+  .pcard { background: var(--white); border: 1px solid var(--rule); border-radius: var(--radius); overflow: hidden; display: flex; flex-direction: column; transition: transform .35s var(--ease), box-shadow .35s var(--ease); }
+  .pcard:hover { transform: translateY(-5px); box-shadow: 0 20px 48px rgba(21,68,122,0.12); }
+  .pcard .pimg { aspect-ratio: 16/11; overflow: hidden; background: var(--sand-soft); }
+  .pcard .pimg img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s var(--ease); }
+  .pcard:hover .pimg img { transform: scale(1.05); }
+  .pcard .pbody { padding: 1.7rem 1.6rem 1.8rem; display: flex; flex-direction: column; flex-grow: 1; }
+  .pcard .pstatus { font-size: 0.6rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--blue-active); margin-bottom: 0.7rem; }
+  .pcard h3 { font-size: 1.3rem; margin-bottom: 0.25rem; color: var(--navy); }
+  .pcard .ploc { font-size: 0.78rem; color: var(--muted); font-weight: 500; margin-bottom: 1rem; letter-spacing: 0.02em; }
+  .pcard p { font-size: 0.9rem; line-height: 1.6; flex-grow: 1; }
+  .pcard .pspecs { margin-top: 1.3rem; padding-top: 1rem; border-top: 1px solid var(--rule); font-size: 0.74rem; font-weight: 600; letter-spacing: 0.03em; color: var(--slate); }
+  .lab-note { margin-top: 2.8rem; text-align: center; font-size: 0.95rem; color: var(--slate); max-width: 60ch; margin-left: auto; margin-right: auto; font-style: italic; }
+  @media (max-width: 920px) { .projects-grid { grid-template-columns: 1fr; max-width: 460px; margin-left:auto; margin-right:auto; } }
+
+  /* ============ MODO ISLA ============ */
+  .isla { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2.5rem, 6vw, 5rem); align-items: center; }
+  .isla-copy h2 { font-size: clamp(1.9rem, 3.4vw, 2.7rem); margin-bottom: 1.3rem; }
+  .isla-copy p { margin-bottom: 1.1rem; max-width: 52ch; }
+  .isla-statement { margin-top: 1.6rem; padding: 1.4rem 1.6rem; background: var(--blue-light); border-radius: var(--radius); color: var(--navy); font-weight: 500; font-size: 1rem; line-height: 1.55; }
+  .isla-visual { position: relative; border-radius: var(--radius); overflow: hidden; aspect-ratio: 4/5; box-shadow: 0 24px 60px rgba(21,68,122,0.14); }
+  .isla-visual img { width: 100%; height: 100%; object-fit: cover; }
+  .isla-visual::after { content:""; position:absolute; inset:0; background: linear-gradient(180deg, transparent 55%, rgba(21,68,122,0.5) 100%); }
+  @media (max-width: 860px) { .isla { grid-template-columns: 1fr; } .isla-visual { aspect-ratio: 16/11; max-height: 360px; } }
+
+  /* ============ EQUIPO ============ */
+  .track { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 4rem); align-items: start; }
+  .track-copy p { margin-bottom: 1.2rem; max-width: 54ch; }
+  .kiwa-card { background: var(--white); border: 1px solid var(--rule); border-radius: var(--radius); padding: 2.2rem; }
+  .kiwa-card .ph-label { color: var(--blue-active); }
+  .kiwa-card h3 { font-size: 1.3rem; color: var(--navy); margin: 0.4rem 0 1rem; }
+  .kiwa-card p { font-size: 0.94rem; line-height: 1.6; margin-bottom: 1.5rem; }
+  .kiwa-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .kiwa-stat { background: var(--sand); border-radius: 10px; padding: 1.2rem; text-align: center; }
+  .kiwa-stat .ks-big { font-size: 1.8rem; font-weight: 800; color: var(--navy); letter-spacing: -0.02em; }
+  .kiwa-stat .ks-label { font-size: 0.66rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-top: 0.3rem; }
+  @media (max-width: 800px) { .track { grid-template-columns: 1fr; } }
+
+  /* ============ CONTACTO ============ */
+  .contact-block { background: var(--navy); border-radius: clamp(16px, 3vw, 26px); padding: clamp(2.6rem, 6vw, 5rem); position: relative; overflow: hidden; }
+  .contact-block::before { content:""; position:absolute; top:-30%; right:-10%; width: 480px; height: 480px; border-radius: 50%; background: radial-gradient(circle, rgba(74,132,184,0.28), transparent 68%); }
+  .contact-inner { position: relative; z-index: 2; display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2.5rem, 6vw, 5rem); align-items: start; }
+  .contact-text .eyebrow { color: var(--blue-light); margin-bottom: 1.2rem; }
+  .contact-text .eyebrow::before { background: var(--blue-mid); }
+  .contact-text h2 { color: var(--white); font-size: clamp(1.8rem, 3.2vw, 2.6rem); margin-bottom: 1.2rem; }
+  .contact-text p { color: rgba(255,255,255,0.82); max-width: 44ch; }
+  .contact-text .cmail { display: inline-block; margin-top: 1.8rem; color: var(--blue-light); font-weight: 600; font-size: 1.05rem; border-bottom: 1px solid var(--blue-mid); padding-bottom: 3px; transition: color .3s; }
+  .contact-text .cmail:hover { color: var(--white); }
+  form .frow { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+  form label { display: block; font-size: 0.74rem; font-weight: 600; color: rgba(255,255,255,0.8); margin-bottom: 0.45rem; letter-spacing: 0.03em; }
+  form input, form textarea {
+    width: 100%; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.16);
+    border-radius: 10px; padding: 0.75rem 0.9rem; color: var(--white); font-family: var(--font); font-size: 0.92rem;
+    transition: border-color .25s, background .25s;
+  }
+  form input::placeholder, form textarea::placeholder { color: rgba(255,255,255,0.4); }
+  form input:focus, form textarea:focus { outline: none; border-color: var(--blue-mid); background: rgba(255,255,255,0.12); }
+  form .field { margin-bottom: 1rem; }
+  form button { width: 100%; margin-top: 0.6rem; justify-content: center; padding: 0.9rem; }
+  #form-status { margin-top: 0.9rem; font-size: 0.85rem; color: #ffd2d2; text-align: center; }
+  #form-status.hidden { display: none; }
+  @media (max-width: 860px) { .contact-inner { grid-template-columns: 1fr; } form .frow { grid-template-columns: 1fr; } }
+
+  /* ============ FOOTER ============ */
+  footer.site { background: var(--white); border-top: 1px solid var(--rule); padding: 3rem 0 2.2rem; }
+  .footer-top { display: flex; justify-content: space-between; align-items: flex-start; gap: 2rem; flex-wrap: wrap; }
+  .footer-brand img { height: 28px; margin-bottom: 0.9rem; }
+  .footer-brand p { font-size: 0.85rem; color: var(--muted); max-width: 30ch; }
+  .footer-social { display: flex; gap: 0.8rem; }
+  .footer-social a { width: 38px; height: 38px; border-radius: 9px; border: 1px solid var(--rule); display: flex; align-items: center; justify-content: center; color: var(--slate); transition: color .3s, border-color .3s, background .3s; }
+  .footer-social a:hover { color: var(--navy); border-color: var(--blue-light); background: var(--sand); }
+  .footer-social svg { width: 18px; height: 18px; }
+  .footer-bottom { margin-top: 2.4rem; padding-top: 1.6rem; border-top: 1px solid var(--rule); display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; font-size: 0.78rem; color: var(--muted); }
+  .footer-bottom a { transition: color .3s; }
+  .footer-bottom a:hover { color: var(--navy); }
+
+  /* ============ REVEAL ============ */
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity .9s var(--ease), transform .9s var(--ease); }
+  .reveal.in { opacity: 1; transform: translateY(0); }
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; }
+    .reveal { opacity: 1; transform: none; }
+  }
+
+  /* ============ TOAST ============ */
+  #toast { position: fixed; top: 1.2rem; right: 1.2rem; z-index: 1000; background: var(--navy); color: #fff; padding: 0.85rem 1.2rem; border-radius: 10px; font-size: 0.88rem; font-weight: 500; box-shadow: 0 10px 30px rgba(21,68,122,0.25); transform: translateY(-20px); opacity: 0; pointer-events: none; transition: opacity .3s, transform .3s; }
+  #toast.show { transform: translateY(0); opacity: 1; }
+</style>
 </head>
-<body class="antialiased bg-white text-gray-900 dark:bg-[#050505] dark:text-gray-300 transition-colors duration-300">
-    <div id="lp-toast" class="fixed top-5 right-5 z-[1000] hidden">
-        <div id="lp-toast-card" class="px-4 py-3 rounded-lg shadow-lg bg-green-600 text-white text-sm font-medium">
-            </div>
+<body>
+
+<div id="toast"></div>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="topnav">
+  <div class="nav-inner">
+    <a href="#home" class="nav-logo" aria-label="Landpower">
+      <img src="images/mainlogo.png" alt="Landpower" />
+    </a>
+    <nav class="nav-links">
+      <a href="#tesis" data-es="Tesis" data-en="Thesis">Tesis</a>
+      <a href="#plataforma" data-es="Plataforma" data-en="Platform">Plataforma</a>
+      <a href="#proyectos" data-es="Proyectos" data-en="Projects">Proyectos</a>
+      <a href="#modo-isla" data-es="Modo Isla" data-en="Modo Isla">Modo Isla</a>
+      <a href="#equipo" data-es="Equipo" data-en="Team">Equipo</a>
+    </nav>
+    <div class="nav-right">
+      <div class="lang">
+        <span data-lang="es" class="active">ES</span>
+        <span class="bar"></span>
+        <span data-lang="en">EN</span>
+      </div>
+      <a href="#contacto" class="btn nav-btn" data-es="Comenzar conversación" data-en="Begin a conversation">Comenzar conversación</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menú">
+        <svg id="menuOpen" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <svg id="menuClose" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><path stroke-linecap="round" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#tesis" data-es="Tesis" data-en="Thesis">Tesis</a>
+    <a href="#plataforma" data-es="Plataforma" data-en="Platform">Plataforma</a>
+    <a href="#proyectos" data-es="Proyectos" data-en="Projects">Proyectos</a>
+    <a href="#modo-isla" data-es="Modo Isla" data-en="Modo Isla">Modo Isla</a>
+    <a href="#equipo" data-es="Equipo" data-en="Team">Equipo</a>
+    <a href="#contacto" class="btn" data-es="Comenzar conversación" data-en="Begin a conversation">Comenzar conversación</a>
+  </div>
+</header>
+
+<main>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="home">
+  <div class="hero-video-wrap">
+    <video autoplay loop muted playsinline id="heroVideo">
+      <source src="images/video1.mp4" type="video/mp4" />
+    </video>
+  </div>
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="eyebrow" data-es="Plataforma de infraestructura autónoma" data-en="Autonomous infrastructure platform">Plataforma de infraestructura autónoma</div>
+      <h1 data-es="El fin de las limitaciones energéticas" data-en="The end of energy constraints">El fin de las limitaciones energéticas</h1>
+      <p class="sub"  style="text-align: justify;" data-es="Landpower diseña, estructura y opera sistemas autónomos de energía e infraestructura crítica para desarrollos turísticos, residenciales y hospitality de alto valor." data-en="Landpower designs, structures, and operates autonomous energy and critical infrastructure systems for high-value tourism, residential, and hospitality developments.">Landpower diseña, estructura y opera sistemas autónomos de energía e infraestructura crítica para desarrollos turísticos, residenciales y hospitality de alto valor.</p>
+      <div class="hero-actions">
+        <a href="#contacto" class="btn" data-es="Comenzar conversación" data-en="Begin a conversation">Comenzar conversación <span class="arrow">→</span></a>
+        <a href="#plataforma" class="btn ghost" style="color:#fff" data-es="Conocer la plataforma" data-en="Explore the platform">Conocer la plataforma <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <span data-es="Desliza" data-en="Scroll">Desliza</span>
+    <span class="line"></span>
+  </div>
+</section>
+
+<!-- ============ TESIS ============ -->
+<section class="band white" id="tesis">
+  <div class="wrap">
+    <div class="thesis-grid">
+      <div class="thesis-copy reveal">
+        <div class="eyebrow" data-es="La oportunidad" data-en="The opportunity">La oportunidad</div>
+        <h2 style="margin-top:1.1rem"  style="text-align: justify;" data-es="Los desarrollos premium están llegando donde la infraestructura pública no alcanza" data-en="Premium developments are reaching places the public grid never will">Los desarrollos premium están llegando donde la infraestructura pública no alcanza</h2>
+        <p  style="text-align: justify;" data-es="En costa, sierra y territorios remotos, la energía, el agua, la movilidad y la operación no pueden resolverse como piezas separadas. Cada una depende de las demás, y cada falla compromete la experiencia del proyecto." data-en="On coastlines, in the highlands, and across remote terrain, energy, water, mobility, and operations can't be solved as silos. Each one depends on the others, and any single failure puts the whole project at risk.">En costa, sierra y territorios remotos, la energía, el agua, la movilidad y la operación no pueden resolverse como piezas separadas. Cada una depende de las demás, y cada falla compromete la experiencia del proyecto.</p>
+        <p  style="text-align: justify;" data-es=" Hoy, la combinación de nuevas tecnologías, mayor presión sobre la infraestructura pública y una demanda creciente por desarrollos autosuficientes permite diseñar sistemas integrados que antes no eran viables en calidad, costo y confiabilidad." data-en=" Today, the combination of new technologies, increasing pressure on public infrastructure, and growing demand for self-sufficient developments makes it possible to design integrated systems that were previously not viable in terms of quality, cost, and reliability. "> Hoy, la combinación de nuevas tecnologías, mayor presión sobre la infraestructura pública y una demanda creciente por desarrollos autosuficientes permite diseñar sistemas integrados que antes no eran viables en calidad, costo y confiabilidad..</p>
+      </div>
+      <div class="forces reveal">
+        <div class="force">
+          <span class="fnum">01</span>
+          <h4 data-es="Contratos de Largo Plazo" data-en="Long-Term Partnership"> Contratos de Largo Plazo </h4>
+          <p data-es="Estructuras diseñadas para acompañar al desarrollo durante décadas, no solo para resolver una necesidad inicial." data-en=" Structures designed to support the development for decades, not just solve an initial need."> Estructuras diseñadas para acompañar al desarrollo durante décadas, no solo para resolver una necesidad inicial.</p>
+        </div>
+        <div class="force">
+          <span class="fnum">02</span>
+          <h4 data-es="Confiabilidad Operativa" data-en="Operational Reliability"> Confiabilidad Operativa </h4>
+          <p data-es="Sistemas diseñados para operar con continuidad, monitoreo y respuesta en ubicaciones donde fallar no es opción." data-en=" Systems designed for continuity, monitoring, and response in locations where failure is not an option."> Sistemas diseñados para operar con continuidad, monitoreo y respuesta en ubicaciones donde fallar no es opción.</p>
+        </div>
+        <div class="force">
+          <span class="fnum">03</span>
+          <h4 data-es="Costos Competitivos" data-en=" Competitive Costs "> Costos Competitivos </h4>
+          <p data-es=" Soluciones autónomas que hoy pueden competir en costo total, calidad y control frente a alternativas tradicionales." data-en=" Autonomous solutions that can now compete on total cost, quality, and control against traditional alternatives."> Soluciones autónomas que hoy pueden competir en costo total, calidad y control frente a alternativas tradicionales.</p>
+        </div>
+        <div class="force">
+          <span class="fnum">04</span>
+          <h4 data-es="Resiliencia y Autonomía" data-en=" Resilience & Autonomy">Resiliencia y Autonomía</h4>
+          <p data-es=" Infraestructura integrada que reduce dependencia de redes públicas, combustibles y servicios externos." data-en=" Integrated infrastructure that reduces dependence on public grids, fuels, and external services."> Infraestructura integrada que reduce dependencia de redes públicas, combustibles y servicios externos.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ METRICS / PROOF NUMBERS ============ -->
+<section class="band sand">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow center" data-es="Por qué Landpower" data-en="Why Landpower">Por qué Landpower</div>
+      <h2 data-es="Infraestructura que opera por 30 años o más" data-en="Infrastructure built to run for 30 years and beyond">Infraestructura que opera por 30 años o más</h2>
+      <p data-es="Diseñamos, estructuramos y operamos infraestructura integrada para que los desarrollos en ubicaciones remotas funcionen de forma autosuficiente durante décadas." data-en="We design, build, and operate integrated infrastructure so developments in remote locations can run on their own for decades.">Diseñamos, estructuramos y operamos infraestructura integrada para que los desarrollos en ubicaciones remotas funcionen de forma autosuficiente durante décadas.</p>
+    </div>
+    <div class="metrics reveal">
+      <div class="metric">
+        <div class="big" data-es="Valor Estratégico" data-en="Strategic Value">Valor Estratégico</div>
+        <div class="mlabel" data-es="Incentivos alineados con el desarrollo" data-en="Incentives aligned with the development">Incentivos alineados con el desarrollo</div>
+        <p data-es="Estructuramos soluciones que permiten al desarrollador mantener control, participar en el valor creado y contar con un socio operativo de largo plazo." data-en="We structure solutions that allow the developer to maintain control, participate in the value created, and rely on a long-term operating partner.">Estructuramos soluciones que permiten al desarrollador mantener control, participar en el valor creado y contar con un socio operativo de largo plazo.</p>
+      </div>
+      <div class="metric">
+        <div class="big">24/7</div>
+        <div class="mlabel" data-es="Operación y monitoreo" data-en="Operation & monitoring">Operación y monitoreo</div>
+        <p data-es="Permanecemos como socio operativo: monitoreo continuo, inteligencia de datos y optimización durante toda la vida del activo." data-en="We stay on as your operating partner — continuous monitoring, data intelligence, and optimization for the full life of the asset.">Permanecemos como socio operativo: monitoreo continuo, inteligencia de datos y optimización durante toda la vida del activo.</p>
+      </div>
+      <div class="metric">
+        <div class="big">&gt;70%</div>
+        <div class="mlabel" data-es="Menos combustible fósil" data-en="Less fossil fuel">Menos combustible fósil</div>
+        <p data-es="Sistemas híbridos de solar y almacenamiento que reducen drásticamente la dependencia del diésel, sus costos y su huella de carbono." data-en="Solar-plus-storage hybrids that sharply cut diesel dependence, its costs, and its carbon footprint.">Sistemas híbridos de solar y almacenamiento que reducen drásticamente la dependencia del diésel, sus costos y su huella de carbono.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PLATAFORMA ============ -->
+<section class="band white" id="plataforma">
+  <div class="wrap">
+    <div class="platform-top">
+      <div class="reveal">
+        <div class="eyebrow" data-es="La plataforma" data-en="The platform">La plataforma</div>
+<h2
+style="margin-top:1.1rem"
+data-es="Una plataforma<br>Múltiples verticales<br>Un solo responsable"
+data-en="One platform<br>Many verticals<br>One point of accountability"
+>
+Una plataforma<br>
+Múltiples verticales<br>
+Un solo responsable
+</h2>
+        <p  style="text-align: justify;" data-es="La energía es el núcleo de la plataforma. A su alrededor integramos las verticales que un desarrollo autosuficiente necesita para operar durante décadas." data-en="Energy sits at the core of the platform. Around it, we integrate the systems a self-sufficient development needs to keep running for decades.">La energía es el núcleo de la plataforma. A su alrededor integramos las verticales que un desarrollo autosuficiente necesita para operar durante décadas.</p>
+        <p  style="text-align: justify;" data-es="Coordinamos una red de socios especializados con trayectoria en cada vertical, y nos mantenemos como el integrador único y el único responsable ante el desarrollador. Tú tratas con un solo equipo." data-en="We coordinate a network of specialist partners with a track record in each field, and we stay the single integrator — and the one team the developer answers to. You deal with one point of contact."> Coordinamos una red de socios especializados con trayectoria en cada vertical, y nos mantenemos como el integrador único y el único responsable ante el desarrollador. Tú tratas con un solo equipo.</p>
+      </div>
+      <div class="reveal">
+        <div class="core-diagram">
+          <svg viewBox="0 0 460 460" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+            <circle cx="230" cy="230" r="210" fill="none" stroke="#4A84B8" stroke-width="1" opacity="0.18"/>
+            <circle cx="230" cy="230" r="170" fill="none" stroke="#4A84B8" stroke-width="1" opacity="0.28"/>
+            <circle cx="230" cy="230" r="124" fill="none" stroke="#4A84B8" stroke-width="1" opacity="0.4"/>
+            <!-- connecting lines -->
+            <g stroke="#4A84B8" stroke-width="1" opacity="0.4">
+              <line x1="230" y1="156" x2="230" y2="92"/>
+              <line x1="304" y1="230" x2="368" y2="230"/>
+              <line x1="230" y1="304" x2="230" y2="368"/>
+              <line x1="156" y1="230" x2="92" y2="230"/>
+              <line x1="282" y1="178" x2="326" y2="134"/>
+              <line x1="178" y1="282" x2="134" y2="326"/>
+            </g>
+            <!-- core -->
+            <circle cx="230" cy="230" r="74" fill="#15447A"/>
+            <text x="230" y="224" text-anchor="middle" font-family="Inter" font-weight="700" font-size="19" fill="#fff" data-es="Energía" data-en="Energy">Energía</text>
+            <text x="230" y="246" text-anchor="middle" font-family="Inter" font-weight="600" font-size="8.5" letter-spacing="2.5" fill="#D8E8F4" data-es="NÚCLEO" data-en="CORE">NÚCLEO</text>
+            <!-- nodes -->
+            <g font-family="Inter" font-weight="600" font-size="12" fill="#15447A">
+              <circle cx="230" cy="82" r="5" fill="#1E5FA8"/>
+              <text x="230" y="64" text-anchor="middle" data-es="Agua" data-en="Water">Agua</text>
+              <circle cx="378" cy="230" r="5" fill="#1E5FA8"/>
+              <text x="378" y="214" text-anchor="middle" data-es="Movilidad" data-en="Mobility">Movilidad</text>
+              <circle cx="230" cy="378" r="5" fill="#1E5FA8"/>
+              <text x="230" y="400" text-anchor="middle" data-es="Agro" data-en="Agro">Agro</text>
+              <circle cx="82" cy="230" r="5" fill="#1E5FA8"/>
+              <text x="82" y="214" text-anchor="middle" data-es="Térmico" data-en="Thermal">Térmico</text>
+              <circle cx="334" cy="126" r="5" fill="#1E5FA8"/>
+              <text x="346" y="112" text-anchor="middle" data-es="Servicios" data-en="Services">Servicios</text>
+              <circle cx="126" cy="334" r="5" fill="#1E5FA8"/>
+              <text x="118" y="356" text-anchor="middle" data-es="Alineación" data-en="Alignment">Alineación</text>
+            </g>
+          </svg>
+        </div>
+      </div>
     </div>
 
-    <header class="bg-white/80 dark:bg-black/60 backdrop-blur-lg fixed top-0 left-0 right-0 z-50 border-b border-gray-200/80 dark:border-gray-800/50">
-        <div class="container mx-auto px-4 sm:px-6 py-4">
-            <div class="flex items-center justify-between">
-                <a href="index.html" class="flex items-center space-x-3 flex-shrink-0">
-                    <img src="images/mainlogo.png" alt="Landpower Logo" class="h-8 dark:hidden">
-                    <img src="images/logowhite.png" alt="Landpower Logo" class="h-8 hidden dark:block">
-                </a>
-                <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-gray-600 dark:text-gray-300">
-                    <a href="#shift" class="hover:text-brand-blue transition-colors"><span class="lang-en">The Shift</span><span class="lang-es">El Cambio</span></a>
-                    <a href="#solution" class="hover:text-brand-blue transition-colors"><span class="lang-en">Our Solution</span><span class="lang-es">Nuestra Solución</span></a>
-                    <a href="#industries" class="hover:text-brand-blue transition-colors"><span class="lang-en">Industries</span><span class="lang-es">Sectores</span></a>
-                    <a href="#proof" class="hover:text-brand-blue transition-colors"><span class="lang-en">Proof</span><span class="lang-es">Resultados</span></a>
-                    <a href="#about" class="hover:text-brand-blue transition-colors"><span class="lang-en">About</span><span class="lang-es">Nosotros</span></a>
-                </nav>
-                <div class="flex items-center space-x-2 sm:space-x-4">
-                    <div class="text-sm font-medium flex space-x-3 items-center">
-                        <span id="lang-en-switch" class="active-lang" onclick="setLanguage('en')">EN</span>
-                        <span class="text-gray-400 dark:text-gray-600">/</span>
-                        <span id="lang-es-switch" class="inactive-lang" onclick="setLanguage('es')">ES</span>
-                    </div>
-                    
-                    <a href="#contact" class="hidden sm:inline-block bg-[#144579] text-white font-bold px-5 py-2.5 rounded-lg text-sm hover:bg-[#1a5a9c] transition-colors">
-                        <span class="lang-en">Get Started</span>
-                        <span class="lang-es">Comenzar</span>
-                    </a>
-                    
-                    <div class="md:hidden flex items-center">
-                        <button id="menu-btn" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-brand-blue">
-                            <span class="sr-only">Open main menu</span>
-                            <svg id="menu-open-icon" class="h-6 w-6 block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
-                            </svg>
-                            <svg id="menu-close-icon" class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-            </div>
+    <div class="verticals">
+      <div class="vcard reveal">
+        <div class="vicon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 2L3 14h7l-1 8 10-12h-7l1-8z"/></svg></div>
+        <h4 data-es="Energía" data-en="Energy">Energía</h4>
+        <p data-es="Solar, BESS, respaldo, control, monitoreo y optimización." data-en="Solar, BESS, backup, control, monitoring, and optimization.">Solar, BESS, respaldo, control, monitoreo y optimización.</p>
+        <span class="core-tag" data-es="Núcleo · Operado" data-en="Core · Operated">Núcleo · Operado</span>
+      </div>
+      <div class="vcard reveal">
+        <div class="vicon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 2.7s6 6.5 6 11a6 6 0 11-12 0c0-4.5 6-11 6-11z"/></svg></div>
+        <h4 data-es="Agua" data-en="Water">Agua</h4>
+        <p data-es="Captación, tratamiento, potabilización, distribución y reúso." data-en="Capture, treatment, purification, distribution, and reuse.">Captación, tratamiento, potabilización, distribución y reúso.</p>
+      </div>
+      <div class="vcard reveal">
+        <div class="vicon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 17h14M5 17a2 2 0 01-2-2v-3l2-5h12l2 5v3a2 2 0 01-2 2M7 17v2M17 17v2"/><circle cx="7.5" cy="14" r="1"/><circle cx="16.5" cy="14" r="1"/></svg></div>
+        <h4 data-es="Movilidad eléctrica" data-en="Electric mobility">Movilidad eléctrica</h4>
+        <p data-es="Infraestructura de carga y movilidad interna del desarrollo." data-en="Charging infrastructure and getting around inside the development.">Infraestructura de carga y movilidad interna del desarrollo.</p>
+      </div>
+      <div class="vcard reveal">
+        <div class="vicon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21c0-6 0-9 6-13-1 6-3 9-6 9 0-5-2-8-6-9 5 4 6 7 6 13z"/></svg></div>
+        <h4 data-es="Agro / Agrovoltaica" data-en="Agro / Agrivoltaics">Agro / Agrovoltaica</h4>
+        <p data-es="Integración productiva y regenerativa cuando el proyecto lo requiere." data-en="Productive, regenerative integration when the project calls for it.">Integración productiva y regenerativa cuando el proyecto lo requiere.</p>
+      </div>
+      <div class="vcard reveal">
+        <div class="vicon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v18M8 7c-2 0-3 1.5-3 3.5S6.5 14 8.5 14M16 7c2 0 3 1.5 3 3.5S17.5 14 15.5 14"/></svg></div>
+        <h4 data-es="Térmico" data-en="Thermal">Térmico</h4>
+        <p data-es="Soluciones térmicas para hospitalidad, confort o procesos." data-en="Thermal solutions for hospitality, comfort, or processes.">Soluciones térmicas para hospitalidad, confort o procesos.</p>
+      </div>
+      <div class="vcard reveal">
+        <div class="vicon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 12h4l2 6 4-12 2 6h6"/></svg></div>
+        <h4 data-es="Servicios operativos" data-en="Operating services">Servicios operativos</h4>
+        <p data-es="Monitoreo, facturación, O&amp;M, reportes y relación con usuarios." data-en="Monitoring, billing, O&amp;M, reporting, and user relations.">Monitoreo, facturación, O&amp;M, reportes y relación con usuarios.</p>
+      </div>
+    </div>
+
+    <div class="reveal" style="margin-top:1.4rem;">
+      <div class="vcard" style="max-width:none;">
+        <div class="vicon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3l8 4v6c0 4-3.5 7-8 8-4.5-1-8-4-8-8V7l8-4z"/><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4"/></svg></div>
+        <h4 data-es="Alineación con el desarrollador" data-en="Aligned with the developer">Alineación con el desarrollador</h4>
+        <p style="max-width:80ch" data-es="En proyectos seleccionados, Landpower puede alinear sus incentivos con el valor de largo plazo que la infraestructura ayuda a crear." data-en="On select projects, Landpower can align its incentives with the long-term value the infrastructure helps create.">En proyectos seleccionados, Landpower puede alinear sus incentivos con el valor de largo plazo que la infraestructura ayuda a crear.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MODELO DE TRABAJO ============ -->
+<section class="band soft">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow center" data-es="Modelo de trabajo" data-en="How we work">Modelo de trabajo</div>
+      <h2 data-es="Diseñamos y estructuramos Después, permanecemos" data-en="We design and build it Then we stay">Diseñamos y estructuramos Después, permanecemos</h2>
+      <p data-es="Una lógica simple en dos fases: primero creamos la infraestructura, después la operamos como socio de largo plazo." data-en="A simple two-phase model: first we create the infrastructure, then we run it as your long-term partner.">Una lógica simple en dos fases: primero creamos la infraestructura, después la operamos como socio de largo plazo.</p>
+    </div>
+    <div class="phases">
+      <div class="phase reveal">
+        <div class="ph-label" data-es="Fase 1" data-en="Phase 1">Fase 1</div>
+        <h3 data-es="Diseñamos y estructuramos" data-en="We design and structure">Diseñamos y estructuramos</h3>
+        <ul>
+          <li data-es="Análisis energético, hídrico y operativo del sitio" data-en="Energy, water, and operational analysis of the site">Análisis energético, hídrico y operativo del sitio</li>
+          <li data-es="Diseño de infraestructura integrada" data-en="Integrated infrastructure design">Diseño de infraestructura integrada</li>
+          <li data-es="Selección de socios especializados" data-en="Choosing the right specialist partners">Selección de socios especializados</li>
+          <li data-es="Estructura comercial y operativa" data-en="Commercial and operating structure">Estructura comercial y operativa</li>
+          <li data-es="Plan de implementación" data-en="Implementation plan">Plan de implementación</li>
+          <li data-es="Opciones de financiamiento según el proyecto" data-en="Financing options that fit the project">Opciones de financiamiento según el proyecto</li>
+        </ul>
+        <p class="ph-note" data-es="Cada proyecto se estructura de forma flexible según las necesidades del desarrollador, el tamaño del activo y el horizonte de operación." data-en="Every project is structured to fit the developer's needs, the size of the asset, and how long it will run.">Cada proyecto se estructura de forma flexible según las necesidades del desarrollador, el tamaño del activo y el horizonte de operación.</p>
+      </div>
+      <div class="phase dark reveal">
+        <div class="ph-label" data-es="Fase 2" data-en="Phase 2">Fase 2</div>
+        <h3 data-es="Permanecemos como socio operativo" data-en="We stay on as your operating partner">Permanecemos como socio operativo</h3>
+        <ul>
+          <li data-es="Monitoreo 24/7" data-en="24/7 monitoring">Monitoreo 24/7</li>
+          <li data-es="Inteligencia de datos" data-en="Data intelligence">Inteligencia de datos</li>
+          <li data-es="Coordinación de O&amp;M" data-en="O&amp;M coordination">Coordinación de O&amp;M</li>
+          <li data-es="Facturación y cobranza" data-en="Billing and collection">Facturación y cobranza</li>
+          <li data-es="Reportes y optimización continua" data-en="Reporting and ongoing optimization">Reportes y optimización continua</li>
+          <li data-es="Relación con usuarios" data-en="User relations">Relación con usuarios</li>
+          <li data-es="Asset management de largo plazo" data-en="Long-term asset management">Asset management de largo plazo</li>
+        </ul>
+        <p class="ph-note" data-es="Estamos los próximos 30 años. Garantizamos el sistema, no sólo la entrega inicial." data-en="We're here for the next 30 years. We stand behind the system, not just the day we hand it over.">Estamos los próximos 30 años. Garantizamos el sistema, no sólo la entrega inicial.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROYECTOS ============ -->
+<section class="band white" id="proyectos">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow center" data-es="Proyectos" data-en="Projects">Proyectos</div>
+      <h2
+  data-es="Proyectos reales<br>Aprendizaje operativo"
+  data-en="Real projects<br>Real operating experience"
+>
+  Proyectos reales<br>
+  Aprendizaje operativo
+</h2>
+      <p data-es="Nuestros proyectos actuales validan el modelo en campo: autonomía energética, monitoreo, servicio al usuario y operación en ubicaciones complejas." data-en="Our current projects prove the model in the field — energy autonomy, monitoring, end-user service, and operation in hard-to-reach locations.">Nuestros proyectos actuales validan el modelo en campo: autonomía energética, monitoreo, servicio al usuario y operación en ubicaciones complejas.</p>
+    </div>
+    <div class="projects-grid">
+      <div class="pcard reveal">
+        <div class="pimg"><img src="images/amina.jpg" alt="Amina Wind Resort, La Ventana, BCS" /></div>
+        <div class="pbody">
+          <div class="pstatus" data-es="En operación · Energía" data-en="Operating · Energy">En operación · Energía</div>
+          <h3>Amina Wind Resort</h3>
+          <div class="ploc">La Ventana, Baja California Sur</div>
+          <p data-es="Sistema de energía off-grid para hospitality. Demuestra autonomía energética, operación con almacenamiento, respaldo y servicio continuo en un entorno remoto." data-en="An off-grid energy system for hospitality. It proves out energy autonomy, storage-based operation, backup, and round-the-clock service in a remote setting.">Sistema de energía off-grid para hospitality. Demuestra autonomía energética, operación con almacenamiento, respaldo y servicio continuo en un entorno remoto.</p>
+          <div class="pspecs">63 kWp PV · 261 kWh BESS · 130 kW <span data-es="respaldo" data-en="backup">respaldo</span></div>
         </div>
-
-        <div class="md:hidden hidden" id="mobile-menu">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t border-gray-200/80 dark:border-gray-800/50">
-                <a href="#shift" class="mobile-menu-link block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-brand-blue hover:bg-gray-50 dark:hover:bg-gray-700"><span class="lang-en">The Shift</span><span class="lang-es">El Cambio</span></a>
-                <a href="#solution" class="mobile-menu-link block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-brand-blue hover:bg-gray-50 dark:hover:bg-gray-700"><span class="lang-en">Our Solution</span><span class="lang-es">Nuestra Solución</span></a>
-                <a href="#industries" class="mobile-menu-link block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-brand-blue hover:bg-gray-50 dark:hover:bg-gray-700"><span class="lang-en">Industries</span><span class="lang-es">Sectores</span></a>
-                <a href="#proof" class="mobile-menu-link block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-brand-blue hover:bg-gray-50 dark:hover:bg-gray-700"><span class="lang-en">Proof</span><span class="lang-es">Resultados</span></a>
-                <a href="#about" class="mobile-menu-link block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:text-brand-blue hover:bg-gray-50 dark:hover:bg-gray-700"><span class="lang-en">About</span><span class="lang-es">Nosotros</span></a>
-            </div>
+      </div>
+      <div class="pcard reveal">
+        <div class="pimg"><img src="images/tierrasagrada1.avif" alt="Tierra Sagrada, Baja California Sur" /></div>
+        <div class="pbody">
+          <div class="pstatus" data-es="En operación · Multivertical" data-en="Operating · Multi-system">En operación · Multivertical</div>
+          <h3>Tierra Sagrada</h3>
+          <div class="ploc">Baja California Sur</div>
+          <p data-es="Sistema off-grid para un proyecto experiencial. Sirve como laboratorio de plataforma para estructuras de largo plazo y para integrar verticales adicionales como agro y servicios operativos." data-en="An off-grid system for an experiential project. It doubles as a platform testbed for long-term structures and for bringing in further systems like agro and operating services.">Sistema off-grid para un proyecto experiencial. Sirve como laboratorio de plataforma para estructuras de largo plazo y para integrar verticales adicionales como agro y servicios operativos.</p>
+          <div class="pspecs">220 kWp PV · 522 kWh BESS · 100 kW <span data-es="respaldo" data-en="backup">respaldo</span></div>
         </div>
-    </header>
-
-    <main>
-        <section class="min-h-screen relative flex items-center justify-center pt-20 overflow-hidden bg-black">
-            <div class="hero-video-container">
-                <video autoplay loop muted playsinline class="hero-video object-cover object-top" id="hero-video-player">
-                    <source src="images/video1.mp4" type="video/mp4">
-                </video>
-            </div>
-            <div class="absolute inset-0 bg-black/60 z-10"></div>
-            
-            <div class="container mx-auto px-6 text-center relative z-20">
-                <div class="max-w-4xl mx-auto">
-                    <h1 class="font-brand text-4xl md:text-6xl lg:text-7xl font-semibold text-white leading-tight mb-6 drop-shadow-[0_5px_5px_rgba(0,0,0,0.9)]">
-                        <span class="lang-en">The end of energy constraints</span>
-                        <span class="lang-es">El fin de las limitaciones energéticas</span>
-                    </h1>
-                    <p class="text-lg md:text-xl text-gray-100 font-medium max-w-3xl mx-auto mb-10 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
-                        <span class="lang-en">Grid constraints shouldn’t limit where or how you build. Our autonomous microgrids offer clean, reliable energy with full control—no CapEx, no connection delays, no dependence on aging infrastructure.</span>
-                        <span class="lang-es">Las restricciones de la red no deberían limitar dónde o cómo construye. Nuestras microrredes autónomas ofrecen energía limpia y confiable con control total: sin inversión de capital (CapEx), sin demoras de conexión y sin dependencia de infraestructura obsoleta.</span>
-                    </p>
-                    <a href="#contact" class="bg-[#144579] text-white font-bold px-8 py-4 rounded-lg text-lg hover:bg-[#1a5a9c] transition-colors transform hover:scale-105 inline-block shadow-xl">
-                        <span class="lang-en">Become grid-independent</span>
-                        <span class="lang-es">Logre su independencia de la red</span>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <section id="shift" class="py-20 md:py-32">
-            <div class="container mx-auto px-6 relative z-10">
-                <div class="text-center max-w-3xl mx-auto mb-16">
-                    <h2 class="font-brand text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-                        <span class="lang-en">A fundamental shift in energy</span>
-                        <span class="lang-es">Un cambio fundamental en energía</span>
-                    </h2>
-                    <p class="text-gray-600 dark:text-gray-400 text-lg">
-                        <span class="lang-en">Our world now runs on code, data, and electricity. But the grid that powers it is a relic—unstable, insecure, and unprepared for the demands of AI, mass electrification, and mission-critical operations. Waiting for it to catch up isn't a strategy. It's a liability.</span>
-                        <span class="lang-es">Nuestro mundo funciona con código, datos y electricidad. Pero la red que lo alimenta es obsoleta: inestable, insegura y no preparada para las demandas de la IA y las operaciones críticas. Esperar a que se actualice no es una estrategia. Es un riesgo.</span>
-                    </p>
-                </div>
-                <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                    <div class="p-8 rounded-xl text-center bg-gray-50 dark:bg-[#161B22] border border-gray-200 dark:border-[#30363D] transition-colors">
-                        <div class="text-brand-blue text-5xl font-bold mb-3">$0</div>
-                        <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2"><span class="lang-en">Upfront Investment</span><span class="lang-es">Inversión inicial</span></h3>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm"><span class="lang-en">We finance, build, and operate your power plant. You preserve your capital for what matters most: your business.</span><span class="lang-es">Financiamos, construimos y operamos su planta de energía. Usted preserva su capital para lo que más importa: su negocio.</span></p>
-                    </div>
-                    <div class="p-8 rounded-xl text-center bg-gray-50 dark:bg-[#161B22] border border-gray-200 dark:border-[#30363D] transition-colors">
-                        <div class="text-brand-blue text-5xl font-bold mb-3">100%</div>
-                        <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2"><span class="lang-en">Guaranteed Uptime</span><span class="lang-es">Disponibilidad garantizada</span></h3>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm"><span class="lang-en">For mission-critical operations, failure is not an option. We engineer for total reliability, insulating you from grid failures forever.</span><span class="lang-es">Para operaciones de misión crítica, fallar no es una opción. Diseñamos para una confiabilidad total, aislándolo de las fallas de la red para siempre.</span></p>
-                    </div>
-                    <div class="p-8 rounded-xl text-center bg-gray-50 dark:bg-[#161B22] border border-gray-200 dark:border-[#30363D] transition-colors">
-                        <div class="text-brand-blue text-5xl font-bold mb-3">>70%</div>
-                        <h3 class="text-lg font-semibold text-gray-900 dark:text-white mb-2"><span class="lang-en">Less fossil fuel</span><span class="lang-es">Menos diésel</span></h3>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm"><span class="lang-en">Our solar-first hybrid systems slash your reliance on volatile, dirty diesel, cutting costs and your carbon footprint.</span><span class="lang-es">Nuestros sistemas híbridos solares reducen su dependencia del diésel volátil y contaminante, recortando costos y su huella de carbono.</span></p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="solution" class="py-20 md:py-32 bg-gray-50/70 dark:bg-black/20">
-            <div class="container mx-auto px-6">
-                <div class="grid lg:grid-cols-2 gap-16 items-center">
-                    <div>
-                        <h2 class="font-brand text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
-                            <span class="lang-en">An integrated energy platform</span>
-                            <span class="lang-es">Una plataforma de energía integrada</span>
-                        </h2>
-                        <p class="text-gray-700 dark:text-gray-300 mb-8">
-                            <span class="lang-en">We deliver more than just power; we provide a fully managed, tech-enabled energy solution. Our platform analyzes your operational data to design the most efficient system possible, and our team handles the entire lifecycle.</span>
-                            <span class="lang-es">Entregamos más que solo energía; proporcionamos una solución energética totalmente gestionada y tecnológica. Nuestra plataforma analiza sus datos operativos para diseñar el sistema más eficiente posible, y nuestro equipo se encarga de todo el ciclo de vida.</span>
-                        </p>
-                        <ul class="space-y-4 text-gray-700 dark:text-gray-300 custom-bullet">
-                            <li><strong class="text-gray-900 dark:text-white"><span class="lang-en">Data-driven design:</span><span class="lang-es">Diseño basado en datos:</span></strong> <span class="lang-en">We model every variable to design a system continuously optimized for performance and profit.</span><span class="lang-es">Modelamos cada variable para diseñar un sistema continuamente optimizado para el rendimiento y la rentabilidad.</span></li>
-                            <li><strong class="text-gray-900 dark:text-white"><span class="lang-en">Best-in-class tech:</span><span class="lang-es">Tecnología de punta:</span></strong> <span class="lang-en">We're supplier-agnostic, choosing the world's best technology to deliver the best results for you.</span><span class="lang-es">Somos agnósticos a los proveedores, eligiendo la mejor tecnología del mundo para entregarle los mejores resultados.</span></li>
-                            <li><strong class="text-gray-900 dark:text-white"><span class="lang-en">Radical simplicity:</span><span class="lang-es">Simplicidad radical:</span></strong> <span class="lang-en">One contract, one predictable bill. We manage the entire lifecycle. You get guaranteed uptime.</span><span class="lang-es">Un contrato, una factura predecible. Gestionamos todo el ciclo de vida. Usted obtiene disponibilidad garantizada.</span></li>
-                        </ul>
-                    </div>
-                    <div class="grid grid-cols-1 gap-8">
-                        <div class="p-8 rounded-xl bg-white/50 dark:bg-[rgba(22,27,34,0.4)] border border-gray-200 dark:border-[#30363D] transition-all duration-300 backdrop-blur-lg hover:border-brand-blue dark:hover:border-brand-blue transform hover:-translate-y-2 hover:scale-[1.02] hover:shadow-2xl">
-                            <h3 class="font-brand text-xl font-bold text-gray-900 dark:text-white mb-3"><span class="lang-en">Energy-as-a-Service</span><span class="lang-es">Energía como Servicio</span></h3>
-                            <p class="text-gray-600 dark:text-gray-400"><span class="lang-en">We turn a complex capital project into a simple operating expense. You pay a predictable rate for power, and we handle the rest.</span><span class="lang-es">Convertimos un proyecto de capital complejo en un simple gasto operativo. Usted paga una tarifa predecible por la energía, nosotros nos encargamos del resto.</span></p>
-                        </div>
-                        <div class="p-8 rounded-xl bg-white/50 dark:bg-[rgba(22,27,34,0.4)] border border-gray-200 dark:border-[#30363D] transition-all duration-300 backdrop-blur-lg hover:border-brand-blue dark:hover:border-brand-blue transform hover:-translate-y-2 hover:scale-[1.02] hover:shadow-2xl">
-                            <h3 class="font-brand text-xl font-bold text-gray-900 dark:text-white mb-3"><span class="lang-en">Total Infrastructure</span><span class="lang-es">Infraestructura Total</span></h3>
-                            <p class="text-gray-600 dark:text-gray-400"><span class="lang-en">In partnership with <a href="https://modoisla.com" target="_blank" class="text-brand-blue hover-link">Modo Isla</a>, we design energy systems with a holistic lens—integrating not just power, but essential services. Surplus energy can be directed toward vital uses like water desalination, heating, or pumping—turning standalone microgrids into truly self-sufficient infrastructure ecosystems.</span><span class="lang-es">En alianza con <a href="https://modoisla.com" target="_blank" class="text-brand-blue hover-link">Modo Isla</a>, diseñamos sistemas energéticos con una visión holística, integrando no solo energía, sino servicios esenciales. La energía excedente puede dirigirse a usos vitales como water desalination, heating, or pumping—turning standalone microgrids into truly self-sufficient infrastructure ecosystems.</span></p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="industries" class="py-20 md:py-32">
-            <div class="container mx-auto px-6">
-                 <div class="text-center max-w-3xl mx-auto mb-16">
-                    <h2 class="font-brand text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-                        <span class="lang-en">Powering demanding industries</span>
-                        <span class="lang-es">Energía para industrias exigentes</span>
-                    </h2>
-                    <p class="text-gray-600 dark:text-gray-400 text-lg">
-                        <span class="lang-en">We serve clients whose missions depend on uninterrupted, high-quality power. Where the grid fails, we deliver the foundation for success.</span>
-                        <span class="lang-es">Servimos a clientes cuyas misiones dependen de energía ininterrumpida y de alta calidad. Donde la red falla, nosotros entregamos la base para el éxito.</span>
-                    </p>
-                </div>
-                <div class="grid lg:grid-cols-3 gap-8">
-                    <a href="real-estate.html" data-base-href="real-estate.html" class="industry-card bg-gray-50/50 dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800 rounded-2xl overflow-hidden group">
-                        <img src="images/realbox.png" class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300" alt="Luxury hotel pool and lounge area at sunset, an example of premium real estate.">
-                        <div class="p-8">
-                            <h3 class="font-brand text-2xl font-bold text-gray-900 dark:text-white mb-3">
-                                <span class="lang-en">Premium real estate</span>
-                                <span class="lang-es">Desarrollos inmobiliarios premium</span>
-                            </h3>
-                            <p class="text-gray-600 dark:text-gray-400">
-                                <span class="lang-en">For luxury resorts and exclusive communities beyond the grid, perfect power isn't a luxury—it's the entire experience. We guarantee it.</span>
-                                <span class="lang-es">Para resorts de lujo y comunidades exclusivas fuera de la red, perfect power isn't a luxury—it's the entire experience. We guarantee it.</span>
-                            </p>
-                        </div>
-                    </a>
-                    <a href="industrial.html" data-base-href="industrial.html" class="industry-card bg-gray-50/50 dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800 rounded-2xl overflow-hidden group">
-                        <img src="images/ind-agrobox.png" class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300" alt="Aerial view of a large agricultural facility with rows of crops.">
-                        <div class="p-8">
-                            <h3 class="font-brand text-2xl font-bold text-gray-900 dark:text-white mb-3">
-                                <span class="lang-en">Industrial & agriculture</span>
-                                <span class="lang-es">Industria y agricultura</span>
-                            </h3>
-                            <p class="text-gray-600 dark:text-gray-400">
-                                <span class="lang-en">Run your off-grid manufacturing or agricultural operations on clean, stable power. Escape volatile diesel prices and hit your sustainability targets.</span>
-                                <span class="lang-es">Opere su planta o proyecto agrícola con energía limpia y estable. Libérese de los precios volátiles del diésel y cumpla sus objetivos de sostenibilidad.</span>
-                            </p>
-                        </div>
-                    </a>
-                    <a href="data-centers.html" data-base-href="data-centers.html" class="industry-card bg-gray-50/50 dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800 rounded-2xl overflow-hidden group">
-                        <img src="images/datacentersbox.png" class="w-full h-56 object-cover group-hover:scale-105 transition-transform duration-300" alt="Rows of servers in a cooled data center, representing AI infrastructure.">
-                        <div class="p-8">
-                            <h3 class="font-brand text-2xl font-bold text-gray-900 dark:text-white mb-3">
-                                <span class="lang-en">Data centers & AI</span>
-                                <span class="lang-es">Centros de datos e IA</span>
-                            </h3>
-                            <p class="text-gray-600 dark:text-gray-400">
-                                <span class="lang-en">Power the intelligence revolution. For edge data centers and AI clusters, our microgrids are the primary power source—more reliable than the grid itself.</span>
-                                <span class="lang-es">Energice la revolución de la inteligencia. Para centros de datos y clústeres de IA, nuestras microrredes son la fuente de energía primaria, más confiable que la red.</span>
-                            </p>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <section id="proof" class="py-20 md:py-32 bg-gray-50/70 dark:bg-black/20">
-            <div class="container mx-auto px-6">
-                <div class="text-center max-w-3xl mx-auto mb-16">
-                    <h2 class="font-brand text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-                        <span class="lang-en">Powering the visionaries</span>
-                        <span class="lang-es">Potenciando a los visionarios</span>
-                    </h2>
-                     <p class="text-gray-600 dark:text-gray-400 text-lg">
-                        <span class="lang-en">Our microgrids in Baja California Sur aren't concepts; they are operational assets delivering real economic and environmental returns for visionary clients, today.</span>
-                        <span class="lang-es">Nuestras microrredes en Baja California Sur no son conceptos; son activos operativos que hoy entregan retornos económicos y ambientales reales para clientes visionarios.</span>
-                    </p>
-                </div>
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div class="rounded-xl overflow-hidden flex flex-col bg-gray-50 dark:bg-[#161B22] border border-gray-200 dark:border-[#30363D]">
-                        <img src="images/amina.jpg" alt="Ocean view from the deck of a modern villa at Ámina Wind Resort" class="w-full h-56 object-cover">
-                        <div class="p-8 flex flex-col flex-grow">
-                             <p class="text-lg text-gray-700 dark:text-gray-300 italic mb-4 flex-grow">
-                                 <span class="lang-en">"Landpower delivered on their promise of 24/7 clean energy, allowing us to offer a truly luxury, off-grid experience. Their team handled everything. We couldn't be happier."</span>
-                                 <span class="lang-es">“En Ámina Wind Resort buscábamos una solución que nos permitiera operar de manera confiable en una zona aislada... Con Landpower, el proyecto se hizo viable y ahora tenemos energía limpia y estable las 24 horas, sin tener que preocuparnos por nada.”</span>
-                            </p>
-                            <div class="font-bold text-gray-900 dark:text-white mt-auto">
-                                <span class="lang-en">Andrés Morales, partner at Ámina Wind Resort</span>
-                                <span class="lang-es">— Andrés Morales, socio Ámina Wind Resort</span>
-                            </div>
-                            <div class="text-sm text-brand-blue">La Ventana, BCS | 63 kWp Solar | 261 kWh BESS | 130 kW Backup </div>
-                        </div>
-                    </div>
-                     <div class="rounded-xl overflow-hidden flex flex-col bg-gray-50 dark:bg-[#161B22] border border-gray-200 dark:border-[#30363D]">
-                        <img src="images/tierrasagrada1.avif" alt="Tierra Sagrada by Cabo Adventures logo" class="w-full h-56 object-cover">
-                         <div class="p-8 flex flex-col flex-grow">
-                             <p class="text-gray-700 dark:text-gray-400 mb-4 flex-grow">
-                                <span class="lang-en">As a premier eco-tourism destination, Tierra Sagrada required a power solution that was both completely reliable and aligned with its commitment to preserving the region's natural beauty. Landpower designed a solar-hybrid microgrid to power the entire operation, ensuring a silent, sustainable, and uninterrupted adventure for every visitor.</span>
-                                <span class="lang-es">Como destino de ecoturismo de primer nivel, Tierra Sagrada requería una solución energética que fuera completamente confiable y estuviera alineada con su compromiso de preservar la belleza natural de la región. Landpower diseñó una microrred solar-híbrida para energizar toda la operación, garantizando una aventura silenciosa, sostenible e ininterrumpida para cada visitante.</span>
-                            </p>
-                            <div class="font-bold text-gray-900 dark:text-white mt-auto">Tierra Sagrada, Cabo Adventures</div>
-                            <div class="text-sm text-brand-blue">
-                                Near Todos Santos, BCS | 220 kWp Solar | 522 kWh BESS | 100 kW Backup*
-                            </div>
-                            <div class="text-xs text-gray-500 dark:text-gray-500 mt-1 leading-tight">
-                                <span class="lang-en"><em>*Integrated system (Existing generator on-site)</em></span>
-                                <span class="lang-es"><em>*Sistema integrado (Generador existente en sitio)</em></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="about" class="py-20 md:py-32">
-            <div class="container mx-auto px-6">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
-                    <div class="order-2 lg:order-1">
-                        <h2 class="font-brand text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-6">
-                            <span class="lang-en">Decades of energy expertise</span>
-                            <span class="lang-es">Décadas de experiencia en energía</span>
-                        </h2>
-                        <p class="text-gray-700 dark:text-gray-400 mb-6">
-                            <span class="lang-en">Landpower is a venture born from the deep sector expertise of its founding partners, <a href="https://www.becquerelcapital.com" target="_blank" class="text-brand-blue hover-link">Becquerel Capital</a> and GG Infraestructura Sustentable. Our team comprises engineers, financiers, and operators who have dedicated their careers to developing Mexico's energy landscape.</span>
-                            <span class="lang-es">Landpower es una empresa que nace de la profunda experiencia en el sector de sus socios fundadores, <a href="https://www.becquerelcapital.com" target="_blank" class="text-brand-blue hover-link">Becquerel Capital</a> and GG Infraestructura Sustentable. Nuestro equipo está formado por ingenieros, financieros y operadores que han dedicado sus carreras al desarrollo del panorama energético de México.</span>
-                        </p>
-                        <p class="text-gray-700 dark:text-gray-400">
-                            <span class="lang-en">This foundation in today's energy infrastructure gives us the unique insight and capability to build the autonomous energy solutions of tomorrow.</span>
-                            <span class="lang-es">Esta base en la infraestructura energética actual nos brinda la visión y la capacidad únicas para construir las soluciones energéticas autónomas del mañana.</span>
-                        </U>
-                    </div>
-                    <div class="order-1 lg:order-2">
-                        <div id="image-gallery" class="relative rounded-lg overflow-hidden shadow-lg w-full aspect-video">
-                            <img id="gallery-image" src="" alt="" class="rounded-lg object-cover w-full h-full">
-                            <div class="absolute bottom-0 left-0 right-0 bg-white/70 dark:bg-black/70 backdrop-blur-sm p-4">
-                                <p id="gallery-caption" class="text-sm text-gray-800 dark:text-gray-300"></p>
-                            </div>
-                            <div id="gallery-controls" class="absolute top-1/2 left-3 right-3 flex justify-between transform -translate-y-1/2">
-                                <button id="prev-btn" aria-label="Previous Image" class="bg-black/50 text-white p-2 rounded-full w-10 h-10 flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-white">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" /></svg>
-                                </button>
-                                <button id="next-btn" aria-label="Next Image" class="bg-black/50 text-white p-2 rounded-full w-10 h-10 flex items-center justify-center focus:outline-none focus:ring-2 focus:ring-white">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="py-20 md:py-32 bg-gray-50/70 dark:bg-black/20">
-            <div class="container mx-auto px-6">
-                <div class="bg-white/50 dark:bg-gray-900/50 border border-gray-200 dark:border-gray-800 rounded-2xl p-8 md:p-16 max-w-4xl mx-auto">
-                     <div class="text-center mb-12">
-                        <h2 class="font-brand text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-                            <span class="lang-en">Let's build your energy future.</span>
-                            <span class="lang-es">Construyamos su futuro energético.</span>
-                        </h2>
-                        <p class="text-gray-600 dark:text-gray-400 text-lg max-w-2xl mx-auto">
-                            <span class="lang-en">Is your project constrained by the grid? Tell us about your goals. Our experts will design a custom, financially compelling solution to power your ambition.</span>
-                            <span class="lang-es">¿Su proyecto está limitado por la red? Cuéntenos sus objetivos. Nuestros expertos diseñarán una solución a la medida y financieramente atractiva para potenciar su ambición.</span>
-                        </p>
-                    </div>
-                    
-                    <form id="contact-form" action="https://formspree.io/f/mwprywgj"  method="POST" class="max-w-xl mx-auto">
-                        <div class="grid sm:grid-cols-2 gap-6 mb-6">
-                            <div>
-                                <label for="name" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"><span class="lang-en">Full Name</span><span class="lang-es">Nombre completo</span></label>
-                                <input type="text" name="name" id="name" autocomplete="name" required class="block w-full rounded-md border-0 bg-white/80 dark:bg-white/5 py-2.5 px-3.5 text-gray-900 dark:text-white shadow-sm ring-1 ring-inset ring-gray-300 dark:ring-white/10 focus:ring-2 focus:ring-inset focus:ring-brand-blue sm:text-sm transition">
-                            </div>
-                            <div>
-                                 <label for="company" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"><span class="lang-en">Company</span><span class="lang-es">Empresa</span></label>
-                                <input type="text" name="company" id="company" autocomplete="organization" class="block w-full rounded-md border-0 bg-white/80 dark:bg-white/5 py-2.5 px-3.5 text-gray-900 dark:text-white shadow-sm ring-1 ring-inset ring-gray-300 dark:ring-white/10 focus:ring-2 focus:ring-inset focus:ring-brand-blue sm:text-sm transition">
-                            </div>
-                        </div>
-                         <div class="mb-6">
-                            <label for="email" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"><span class="lang-en">Email Address</span><span class="lang-es">Correo electrónico</span></label>
-                            <input type="email" name="email" id="email" autocomplete="email" required class="block w-full rounded-md border-0 bg-white/80 dark:bg-white/5 py-2.5 px-3.5 text-gray-900 dark:text-white shadow-sm ring-1 ring-inset ring-gray-300 dark:ring-white/10 focus:ring-2 focus:ring-inset focus:ring-brand-blue sm:text-sm transition">
-                        </div>
-                        <div class="mb-8">
-                            <label for="message" class="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"><span class="lang-en">Project Details</span><span class="lang-es">Detalles del proyecto</span></label>
-                            <textarea name="message" id="message" rows="4" required class="block w-full rounded-md border-0 bg-white/80 dark:bg-white/5 py-2.5 px-3.5 text-gray-900 dark:text-white shadow-sm ring-1 ring-inset ring-gray-300 dark:ring-white/10 focus:ring-2 focus:ring-inset focus:ring-brand-blue sm:text-sm transition" placeholder-en="Location, estimated energy needs, project type, etc." placeholder-es="Ubicación, necesidades energéticas, tipo de proyecto, etc."></textarea>
-                        </div>
-                        <div class="text-center">
-                            
-                            <button id="send-btn" type="submit"
-                                class="bg-[#144579] text-white font-bold px-8 py-3 rounded-lg text-base hover:bg-[#1a5a9c] transition-all duration-300 w-full sm:w-auto shadow-lg transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-blue dark:ring-offset-gray-900">
-                                <span class="lang-en">Send</span>
-                                <span class="lang-es">Enviar</span>
-                            </button>
-                        </div>
-                        <p id="form-status" class="text-center mt-4 text-red-500 hidden"></p>
-                    </form>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="bg-gray-50 dark:bg-black border-t border-gray-200 dark:border-gray-800/50">
-        <div class="container mx-auto px-6 py-12">
-            <div class="md:flex md:items-center md:justify-between">
-                <div class="flex-1 min-w-0">
-                     <a href="index.html" class="inline-block mb-4">
-                        <img src="images/mainlogo.png" alt="Landpower Logo" class="h-8 dark:hidden">
-                        <img src="images/logowhite.png" alt="Landpower Logo" class="h-8 hidden dark:block">
-                    </a>
-                    <p class="text-sm text-gray-600 dark:text-gray-400">
-                        San José del Cabo, Baja California Sur, Mexico
-                    </p>
-                </div>
-                <div class="flex justify-start md:justify-end items-center space-x-4 mt-6 md:mt-0">
-                     <a href="https://www.linkedin.com/company/bajalandpower/" target="_blank" rel="noopener noreferrer" class="text-gray-600 dark:text-gray-400 hover:text-brand-blue dark:hover:text-white transition-colors">
-                        <span class="sr-only">LinkedIn</span>
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"></path></svg>
-                    </a>
-                     <a href="https://www.instagram.com/landpower_mexico/" target="_blank" rel="noopener noreferrer" class="text-gray-600 dark:text-gray-400 hover:text-brand-blue dark:hover:text-white transition-colors">
-                        <span class="sr-only">Instagram</span>
-                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 012.122 2.122c.247.636.416 1.363.465 2.427.048 1.024.06 1.378.06 3.808s-.012 2.784-.06 3.808c-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-2.122 2.122c-.636.247-1.363.416-2.427.465-1.024.048-1.378.06-3.808.06s-2.784-.013-3.808-.06c-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-2.122-2.122c-.247-.636-.416-1.363-.465-2.427-.048-1.024-.06-1.378-.06-3.808s.012-2.784.06-3.808c.049-1.064.218 1.791.465-2.427a4.902 4.902 0 012.122-2.122c.636-.247 1.363.416 2.427.465C9.53 2.013 9.884 2 12.315 2zM12 0C9.81 0 9.448.01 8.378.058c-1.136.049-1.921.23-2.597.484a6.897 6.897 0 00-2.927 2.927c-.254.676-.435 1.461-.484 2.597C2.01 9.448 2 9.81 2 12s.01 2.552.058 3.622c.049 1.136.23 1.921.484 2.597a6.897 6.897 0 002.927 2.927c.676.254 1.461.435 2.597.484C9.448 21.99 9.81 22 12 22s2.552-.01 3.622-.058c1.136-.049 1.921.23 2.597-.484a6.897 6.897 0 002.927-2.927c.254-.676.435-1.461-.484-2.597C21.99 14.552 22 14.19 22 12s-.01-2.552-.058-3.622c-.049-1.136-.23-1.921-.484-2.597a6.897 6.897 0 00-2.927-2.927c-.676-.254-1.461-.435-2.597-.484C14.552 2.01 14.19 2 12 2h.013zM12 6.845a5.155 5.155 0 100 10.31 5.155 5.155 0 000-10.31zm0 8.415a3.26 3.26 0 110-6.52 3.26 3.26 0 010 6.52zm5.835-8.24a1.2 1.2 0 100-2.4 1.2 1.2 0 000 2.4z" clip-rule="evenodd"></path></svg>
-                    </a>
-                </div>
-            </div>
-            <div class="mt-8 border-t border-gray-200 dark:border-gray-800/50 pt-8 text-center text-sm text-gray-500">
-                &copy; 2025 Landpower. <span class="lang-en">All rights reserved.</span><span class="lang-es">Todos los derechos reservados.</span> &nbsp;·&nbsp; <a href="/privacy.html" class="hover:underline hover:text-brand-blue transition-colors"><span class="lang-en">Privacy Policy</span><span class="lang-es">Política de Privacidad</span></a></span><span class="lang-es">Todos los derechos reservados.</span>
-            </div>
+      </div>
+      <div class="pcard reveal">
+        <div class="pimg"><img src="images/experience1.png" alt="Casa Langosta, Mar de Cortés" /></div>
+        <div class="pbody">
+          <div class="pstatus" data-es="En operación · Hospitality de lujo" data-en="Operating · Luxury hospitality">En operación · Hospitality de lujo</div>
+          <h3>Casa Langosta</h3>
+          <div class="ploc" data-es="Mar de Cortés, BCS" data-en="Sea of Cortez, BCS">Mar de Cortés, BCS</div>
+          <p data-es="Activo de hospitality de lujo donde Landpower lidera la capa energética y demuestra monitoreo, gestión de demanda y servicio al cliente final." data-en="A luxury hospitality asset where Landpower leads the energy layer and proves out monitoring, demand management, and end-customer service.">Activo de hospitality de lujo donde Landpower lidera la capa energética y demuestra monitoreo, gestión de demanda y servicio al cliente final.</p>
+          <div class="pspecs" data-es="Monitoreo · Gestión de demanda · Servicio al usuario" data-en="Monitoring · Demand management · End-user service">Monitoreo · Gestión de demanda · Servicio al usuario</div>
         </div>
-    </footer>
-    
-    <script src="app.js" defer></script>
-    <script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/49418521.js"></script>
-    
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            var video = document.getElementById("hero-video-player");
-            if (video) {
-                video.playbackRate = 0.70;
-            }
+      </div>
+    </div>
+    <p class="lab-note reveal" data-es="Cada proyecto suma datos, procesos y criterio operativo que aplicamos en los desarrollos de mayor escala que vienen." data-en="Each project adds the data, the processes, and the operating know-how we bring into the larger developments ahead.">Cada proyecto suma datos, procesos y criterio operativo que aplicamos en los desarrollos de mayor escala que vienen.</p>
+  </div>
+</section>
+
+<!-- ============ MODO ISLA ============ -->
+<section class="band sand" id="modo-isla">
+  <div class="wrap">
+    <div class="isla">
+      <div class="isla-copy reveal">
+        <div class="eyebrow" data-es="Modo Isla" data-en="Modo Isla">Modo Isla</div>
+        <h2 style="margin-top:1.1rem" data-es="Inteligencia territorial" data-en="Land intelligence">Inteligencia territorial</h2>
+        <p style="text-align: justify;" data-es="Modo Isla es la marca de inteligencia territorial de Landpower: integra análisis satelital y presencia en campo para entender mejor los sitios donde operamos. Apoya la originación, el diagnóstico de agua, terreno, clima e infraestructura, y complementa nuestras herramientas in-house de monitoreo con seguimiento local de activos, levantamiento de información y validación operativa." data-en="Modo Isla is Landpower’s land intelligence brand: it combines satellite analysis and field presence to better understand the sites where we operate. It supports origination and the assessment of water, terrain, climate, and infrastructure, while complementing our in-house monitoring tools with local asset follow-up, data collection, and operational validation.">Modo Isla es la marca de inteligencia territorial de Landpower: integra análisis satelital y presencia en campo para entender mejor los sitios donde operamos. Apoya la originación, el diagnóstico de agua, terreno, clima e infraestructura, y complementa nuestras herramientas in-house de monitoreo con seguimiento local de activos, levantamiento de información y validación operativa.</p>
+        <p style="text-align: justify;" data-es="Esta combinación de datos, tecnología y cercanía territorial permite operar proyectos remotos con mayor visibilidad, velocidad de respuesta y conocimiento real del lugar." data-en="This combination of data, technology, and territorial proximity allows us to operate remote projects with greater visibility, faster response times, and deeper knowledge of the site.">Esta combinación de datos, tecnología y cercanía territorial permite operar proyectos remotos con mayor visibilidad, velocidad de respuesta y conocimiento real del lugar.</p>
+        <div class="isla-statement" data-es="Landpower integra la infraestructura; Modo Isla conecta la operación con la realidad del territorio." data-en="Landpower integrates the infrastructure; Modo Isla connects the operation to the reality of the territory.">Landpower integra la infraestructura; Modo Isla conecta la operación con la realidad del territorio.</div>
+      </div>
+      <div class="isla-visual reveal">
+        <img src="images/tierrasagrada1.avif" alt="Territorio y operación en campo" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ EQUIPO / TRAYECTORIA ============ -->
+<section class="band white" id="equipo">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow center" data-es="Equipo y trayectoria" data-en="Team & track record">Equipo y trayectoria</div>
+      <h2 data-es="Una plataforma nacida del ecosistema Becquerel" data-en="A platform that grew out of the Becquerel ecosystem">Una plataforma nacida del ecosistema Becquerel</h2>
+    </div>
+    <div class="track">
+      <div class="track-copy reveal">
+        <p style="text-align: justify;" data-es="Landpower nace del ecosistema Becquerel, con experiencia en energía distribuida, PPAs, regulación, operación de activos y estructuración de proyectos de largo plazo." data-en="Landpower comes out of the Becquerel ecosystem, with hands-on experience in distributed energy, PPAs, regulation, asset operation, and structuring projects built to last.">Landpower nace del ecosistema Becquerel, con experiencia en energía distribuida, PPAs, regulación, operación de activos y estructuración de proyectos de largo plazo.</p>
+        <p style="text-align: justify;" data-es="Esa base nos da la disciplina de ejecución y el criterio para estructurar y operar infraestructura que debe funcionar de forma confiable durante décadas, en los lugares donde más se necesita." data-en="That foundation gives us the discipline to execute and the judgment to build and run infrastructure that has to perform reliably for decades — in the places that need it most.">Esa base nos da la disciplina de ejecución y el criterio para estructurar y operar infraestructura que debe funcionar de forma confiable durante décadas, en los lugares donde más se necesita.</p>
+      </div>
+      <div class="kiwa-card reveal">
+        <div class="ph-label" data-es="Track record del equipo" data-en="Team track record">Track record del equipo</div>
+        <h3>Kiwapower</h3>
+        <p style="text-align: justify;" data-es="El equipo detrás de Landpower acumula experiencia en Kiwapower, plataforma solar C&amp;I desarrollada junto con Marubeni. De ahí viene nuestra disciplina de ejecución, el conocimiento regulatorio y la experiencia operando activos en el largo plazo." data-en="The team behind Landpower built its experience at Kiwapower, a C&amp;I solar platform developed together with Marubeni. That's where our execution discipline, regulatory know-how, and long-term asset operation come from.">El equipo detrás de Landpower acumula experiencia en Kiwapower, plataforma solar C&amp;I desarrollada junto con Marubeni. De ahí viene nuestra disciplina de ejecución, el conocimiento regulatorio y la experiencia operando activos en el largo plazo.</p>
+        <div class="kiwa-stats">
+          <div class="kiwa-stat">
+            <div class="ks-big">+35 MW</div>
+            <div class="ks-label" data-es="Operados" data-en="Operated">Operados</div>
+          </div>
+          <div class="kiwa-stat">
+            <div class="ks-big">+70</div>
+            <div class="ks-label" data-es="Clientes" data-en="Clients">Clientes</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACTO ============ -->
+<section class="band soft" id="contacto">
+  <div class="wrap">
+    <div class="contact-block reveal">
+      <div class="contact-inner">
+        <div class="contact-text">
+          <div class="eyebrow" data-es="Contacto" data-en="Contact">Contacto</div>
+          <h2 data-es="Construyamos infraestructura para los próximos 30 años" data-en="Let's build infrastructure for the next 30 years.">Construyamos infraestructura para los próximos 30 años</h2>
+          <p data-es="Si tu desarrollo requiere energía confiable, agua, movilidad o servicios críticos en una ubicación compleja, conversemos." data-en="If your development needs reliable energy, water, mobility, or critical services in a tough location, let's talk.">Si tu desarrollo requiere energía confiable, agua, movilidad o servicios críticos en una ubicación compleja, conversemos.</p>
+          <a href="mailto:natalia@landpower.mx" class="cmail">natalia@landpower.mx</a>
+        </div>
+        <form id="contact-form" action="https://formspree.io/f/mwprywgj" method="POST">
+          <div class="frow">
+            <div>
+              <label for="name" data-es="Nombre completo" data-en="Full name">Nombre completo</label>
+              <input type="text" name="name" id="name" autocomplete="name" required />
+            </div>
+            <div>
+              <label for="company" data-es="Empresa" data-en="Company">Empresa</label>
+              <input type="text" name="company" id="company" autocomplete="organization" />
+            </div>
+          </div>
+          <div class="field">
+            <label for="email" data-es="Correo electrónico" data-en="Email address">Correo electrónico</label>
+            <input type="email" name="email" id="email" autocomplete="email" required />
+          </div>
+          <div class="field">
+            <label for="message" data-es="Detalles del proyecto" data-en="Project details">Detalles del proyecto</label>
+            <textarea name="message" id="message" rows="4" required data-ph-es="Ubicación, tipo de proyecto, necesidades estimadas, horizonte…" data-ph-en="Location, project type, what you'll need, time horizon…" placeholder="Ubicación, tipo de proyecto, necesidades estimadas, horizonte…"></textarea>
+          </div>
+          <button type="submit" class="btn on-navy" id="send-btn" data-es="Iniciar conversación" data-en="Begin a conversation">Iniciar conversación <span class="arrow">→</span></button>
+          <p id="form-status" class="hidden"></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="images/mainlogo.png" alt="Landpower" />
+        <p data-es="San José del Cabo, Baja California Sur, México" data-en="San José del Cabo, Baja California Sur, Mexico">San José del Cabo, Baja California Sur, México</p>
+      </div>
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/company/bajalandpower/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <svg fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/landpower_mexico/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>&copy; 2026 Landpower. <span data-es="Todos los derechos reservados." data-en="All rights reserved.">Todos los derechos reservados.</span></div>
+      <a href="/privacy.html" data-es="Política de privacidad" data-en="Privacy policy">Política de privacidad</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  /* ---------- Language ---------- */
+  function setLang(lang) {
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-' + lang + ']').forEach(function(el){
+      var v = el.getAttribute('data-' + lang);
+      if (v != null) el.innerHTML = v;
+    });
+    document.querySelectorAll('[data-ph-' + lang + ']').forEach(function(el){
+      var v = el.getAttribute('data-ph-' + lang);
+      if (v != null) el.setAttribute('placeholder', v);
+    });
+    document.querySelectorAll('.lang span[data-lang]').forEach(function(s){
+      s.classList.toggle('active', s.dataset.lang === lang);
+    });
+  }
+  document.querySelectorAll('.lang span[data-lang]').forEach(function(s){
+    s.addEventListener('click', function(){ setLang(s.dataset.lang); });
+  });
+
+  /* ---------- Nav scroll state ---------- */
+  var nav = document.getElementById('topnav');
+  function onScroll(){ nav.classList.toggle('scrolled', window.scrollY > 30); }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  /* ---------- Mobile menu ---------- */
+  var menuToggle = document.getElementById('menuToggle');
+  var mobileMenu = document.getElementById('mobileMenu');
+  var menuOpen = document.getElementById('menuOpen');
+  var menuClose = document.getElementById('menuClose');
+  menuToggle.addEventListener('click', function(){
+    var open = mobileMenu.classList.toggle('open');
+    menuOpen.style.display = open ? 'none' : 'block';
+    menuClose.style.display = open ? 'block' : 'none';
+  });
+  mobileMenu.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      mobileMenu.classList.remove('open');
+      menuOpen.style.display = 'block';
+      menuClose.style.display = 'none';
+    });
+  });
+
+  /* ---------- Active nav link on scroll ---------- */
+  var sections = ['tesis','plataforma','proyectos','modo-isla','equipo'];
+  var navAnchors = document.querySelectorAll('.nav-links a');
+  function setActiveLink(){
+    var pos = window.scrollY + 140;
+    var current = '';
+    sections.forEach(function(id){
+      var sec = document.getElementById(id);
+      if (sec && sec.offsetTop <= pos) current = id;
+    });
+    navAnchors.forEach(function(a){
+      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+    });
+  }
+  window.addEventListener('scroll', setActiveLink, { passive: true });
+  setActiveLink();
+
+  /* ---------- Reveal on scroll ---------- */
+  var revealObserver = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting){ e.target.classList.add('in'); revealObserver.unobserve(e.target); }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+  document.querySelectorAll('.reveal').forEach(function(el){ revealObserver.observe(el); });
+
+  /* ---------- Hero video playback ---------- */
+  document.addEventListener('DOMContentLoaded', function(){
+    var v = document.getElementById('heroVideo');
+    if (v) v.playbackRate = 0.7;
+  });
+
+  /* ---------- Toast ---------- */
+  function showToast(msg){
+    var t = document.getElementById('toast');
+    t.textContent = msg; t.classList.add('show');
+    setTimeout(function(){ t.classList.remove('show'); }, 3500);
+  }
+
+  /* ---------- Contact form ---------- */
+  var form = document.getElementById('contact-form');
+  form.addEventListener('submit', function(event){
+    event.preventDefault();
+    var status = document.getElementById('form-status');
+    var btn = document.getElementById('send-btn');
+    var data = new FormData(event.target);
+    var original = btn.innerHTML;
+    var lang = document.documentElement.lang || 'es';
+    btn.innerHTML = lang === 'en' ? 'Sending…' : 'Enviando…';
+    btn.disabled = true;
+    fetch(event.target.action, { method: form.method, body: data, headers: { 'Accept': 'application/json' } })
+    .then(function(response){
+      if (response.ok) { window.location.href = 'thanks.html'; }
+      else {
+        response.json().then(function(d){
+          status.innerHTML = (d.errors) ? d.errors.map(function(e){return e.message;}).join(', ')
+            : (lang === 'en' ? 'There was a problem submitting the form.' : 'Hubo un problema al enviar el formulario.');
+          status.classList.remove('hidden');
+          btn.innerHTML = original; btn.disabled = false;
         });
-    </script>
-    
-    <script>
-        var form = document.getElementById("contact-form");
-        
-        async function handleSubmit(event) {
-          event.preventDefault(); // Evita la redirección automática de Formspree
-          var status = document.getElementById("form-status");
-          var data = new FormData(event.target);
-          
-          var btn = document.getElementById("send-btn");
-          var originalContent = btn.innerHTML;
-          btn.innerHTML = "Sending... / Enviando...";
-          btn.disabled = true;
+      }
+    })
+    .catch(function(){
+      status.innerHTML = (lang === 'en' ? 'There was a problem submitting the form.' : 'Hubo un problema al enviar el formulario.');
+      status.classList.remove('hidden');
+      btn.innerHTML = original; btn.disabled = false;
+    });
+  });
+</script>
 
-          fetch(event.target.action, {
-            method: form.method,
-            body: data,
-            headers: {
-                'Accept': 'application/json' // Pide respuesta JSON en lugar de redirección
-            }
-          }).then(response => {
-            if (response.ok) {
-              // AQUÍ OCURRE LA MAGIA: Redirección manual a thanks.html
-              window.location.href = "thanks.html"; 
-            } else {
-              response.json().then(data => {
-                if (Object.hasOwn(data, 'errors')) {
-                  status.innerHTML = data["errors"].map(error => error["message"]).join(", ");
-                } else {
-                  status.innerHTML = "Oops! There was a problem submitting your form / Hubo un problema al enviar.";
-                }
-                status.classList.remove("hidden");
-                btn.innerHTML = originalContent;
-                btn.disabled = false;
-              })
-            }
-          }).catch(error => {
-            status.innerHTML = "Oops! There was a problem submitting your form / Hubo un problema al enviar.";
-            status.classList.remove("hidden");
-            btn.innerHTML = originalContent;
-            btn.disabled = false;
-          });
-        }
-        
-        form.addEventListener("submit", handleSubmit);
-    </script>
-    </body>
+<!-- HubSpot -->
+<script type="text/javascript" id="hs-script-loader" async defer src="//js.hs-scripts.com/49418521.js"></script>
+
+</body>
 </html>
