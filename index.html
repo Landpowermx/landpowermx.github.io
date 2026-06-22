@@ -268,12 +268,13 @@
   align-items: center;
 }
 
-.isla-logo {
+.isla-logo-title {
   display: block;
-  width: min(22px, 55vw);
+  width: 145px;
+  max-width: 42vw;
   height: auto;
   object-fit: contain;
-  margin-bottom: 1.2rem;
+  margin-bottom: 1.1rem;
 }
 
 .isla-copy h2 {
@@ -327,9 +328,10 @@
     grid-template-columns: 1fr;
   }
 
-  .isla-logo {
-    width: min(190px, 58vw);
-    margin-bottom: 1rem;
+  .isla-logo-title {
+    width: 125px;
+    max-width: 45vw;
+    margin-bottom: 0.9rem;
   }
 
   .isla-visual {
@@ -744,7 +746,7 @@ Un solo responsable
       <div class="isla">
         <div class="isla-copy reveal">
           <img
-            class="isla-logo"
+            class="isla-logo-title"
             src="images/Modos%20Isla%20bk.png"
             alt="Modo Isla"
           />
